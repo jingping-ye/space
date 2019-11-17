@@ -1,0 +1,24 @@
+import os
+import requests
+from bs4 import BeautifulSoup
+import lxml
+
+
+def query(url):
+    html = requests.get(url).content.decode()
+    return html
+
+
+def save(title):
+    file_path = os.path.join(os.getcwd(), 'the_king_avatar.txt')
+    with open(file_path, 'a', encoding='utf-8') as f:
+        f.write(title)
+
+
+# 开始抓取
+content = query('https://tieba.baidu.com/f?ie=utf-8&kw=全职高手&fr=search')
+soup = BeautifulSoup(content, 'lxml')
+block = soup.find_all(class_='threadlist_title pull_left j_th_tit')
+for item in block:
+    sub_title = item.find('a')
+    save(sub_title.text + '\n')

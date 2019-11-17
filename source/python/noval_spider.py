@@ -1,0 +1,81 @@
+import os
+import re
+import requests
+import time
+from multiprocessing.dummy import Pool
+
+
+def get_toc(basic_url, html):
+    """
+    获取每一章的url链接，存储到一个列表并返回
+    :param basic_url: 基础url
+    :param html: 源代码
+    :return: url链接
+    """
+    toc_url_list = []
+    toc_block = re.findall('正文(.*?)</tbody>', html, re.S)[0]
+    toc_url = re.findall('href="(.*?)"', toc_block, re.S)
+    for url in toc_url:
+        toc_url_list.append(basic_url + url)
+
+    return toc_url_list
+
+
+def get_article(html):
+    """
+    获取每一章的正文并返回章节名和正文
+    :param html: 正文源代码
+    :return: 章节名、正文
+    """
+    chapter_name = re.search('size="4">(.*?)</font', html, re.S).group(1)
+    text_block = re.search('<p>(.*?)</p>', html, re.S).group(1)
+    text_block = text_block.replace('<br />', '')
+    text_block = text_block.replace('&nbsp;', '')
+    return chapter_name, text_block
+
+
+def save(chapter, article):
+    """
+    将每一章保存到本地
+    :param chapter: 章节名
+    :param article: 正文内容
+    :return: None
+    """
+    os.makedirs(basic_folder, exist_ok=True)
+    # 创建文件夹
+    # 参数: 文件夹名称;如果文件夹已经存在，那么不重新创建文件夹
+    file_path = os.path.join(basic_folder, chapter + '.txt')
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(article)
+
+
+def query(url):
+    html_content = requests.get(url).content.decode('gb2312')
+    return html_content
+
+
+# 执行抓取函数
+def do_scrap(url):
+    chapter_html = query(url)
+    chapter_article = get_article(chapter_html)
+    save(chapter_article[0], chapter_article[1])
+
+
+# 抓取
+
+basic_url = 'https://www.kanunu8.com/book3/7576/'
+basic_folder = '偶尔远行'
+
+html = query(basic_url)
+toc_link_list = get_toc(basic_url, html)
+
+start = time.time()
+# 用时计算
+# 线程池10：40.76615071296692
+# 线程池20: 13.25427770614624
+# 线程池25: 8.855741739273071
+# 线程池30：7.507011890411377
+pool = Pool(30)
+pool.map(do_scrap, toc_link_list)
+end = time.time()
+print(f'用时:{end-start}')

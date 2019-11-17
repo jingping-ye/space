@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>实验: 抓取小说动物农场 | 《Python 爬虫开发：从入门到实战》读书笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./快速解析html.html" />
+    
+    
+    <link rel="prev" href="./简单的网页爬虫开发.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.1"
+        data-chapter-title="实验: 抓取小说动物农场"
+        data-filepath="抓取小说动物农场.md"
+        data-basepath="."
+        data-revision="Sun Nov 17 2019 21:30:52 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="爬虫概述.html">
+            
+                
+                    <a href="./爬虫概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        爬虫概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python语法基础.html">
+            
+                
+                    <a href="./python语法基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python 语法基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="正则表达式与文件操作.html">
+            
+                
+                    <a href="./正则表达式与文件操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        正则表达式与文件操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="采集贴吧信息.html">
+            
+                
+                    <a href="./采集贴吧信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        实验：采集贴吧信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="简单的网页爬虫开发.html">
+            
+                
+                    <a href="./简单的网页爬虫开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        简单的网页爬虫开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1" data-path="抓取小说动物农场.html">
+            
+                
+                    <a href="./抓取小说动物农场.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        实验: 抓取小说动物农场
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="快速解析html.html">
+            
+                
+                    <a href="./快速解析html.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        快速解析 HTML
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="抓取大麦网爬虫.html">
+            
+                
+                    <a href="./抓取大麦网爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        实验: 抓取大麦网爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="抓取许嵩相关帖子.html">
+            
+                
+                    <a href="./抓取许嵩相关帖子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        实验: 抓取许嵩相关帖子
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="mongodb与redis.html">
+            
+                
+                    <a href="./mongodb与redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        MongoDB 与 Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="抓取小说白夜行的正文内容.html">
+            
+                
+                    <a href="./抓取小说白夜行的正文内容.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        实验：抓取小说白夜行的正文内容
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="异步加载与请求头.html">
+            
+                
+                    <a href="./异步加载与请求头.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        异步加载与请求头
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="抓取乐视网视频评论信息.html">
+            
+                
+                    <a href="./抓取乐视网视频评论信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        实验：抓取乐视网视频评论信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" >
+            
+            <span><b>8.</b> 综合实验</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="使用Fiddler抓取微信饿了么小程序数据.html">
+            
+                
+                    <a href="./使用Fiddler抓取微信饿了么小程序数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        使用 Fiddler 抓取微信饿了么小程序数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >《Python 爬虫开发：从入门到实战》读书笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6293;&#x53D6;&#x5C0F;&#x8BF4;&#x52A8;&#x7269;&#x519C;&#x573A;">&#x6293;&#x53D6;&#x5C0F;&#x8BF4;&#x52A8;&#x7269;&#x519C;&#x573A;</h1>
+<p>&#x4ECE;&#x7F51;&#x5740;<code>https://www.kanunu8.com/book3/6879/</code>&#x6293;&#x53D6;&#x5C0F;&#x8BF4;&#x52A8;&#x7269;&#x519C;&#x573A;&#xFF0C;&#x6309;&#x7AE0;&#x8282;&#x5C06;&#x6293;&#x53D6;&#x5230;&#x7684;&#x6587;&#x7AE0;&#x5185;&#x5BB9;&#x4FDD;&#x5B58;&#x4E3A;txt,&#x6240;&#x6709;txt&#x4FDD;&#x5B58;&#x5728;&#x540C;&#x4E00;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91C7;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x722C;&#x866B;&#x6280;&#x672F;&#x3002;</p>
+<h2 id="&#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x7AE0;&#x7684;url&#x5730;&#x5740;">&#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x7AE0;&#x7684;<code>url</code>&#x5730;&#x5740;</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">&quot;center&quot;</span> <span class="hljs-attribute">bgcolor</span>=<span class="hljs-value">&quot;#ffffcc&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">&quot;center&quot;</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">&quot;4&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>&#x6B63;&#x6587;<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">bgcolor</span>=<span class="hljs-value">&quot;#ffffff&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;25%&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131779.html&quot;</span>&gt;</span>&#x7B2C;&#x4E00;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;25%&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131780.html&quot;</span>&gt;</span>&#x7B2C;&#x4E8C;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;25%&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131781.html&quot;</span>&gt;</span>&#x7B2C;&#x4E09;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;25%&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131782.html&quot;</span>&gt;</span>&#x7B2C;&#x56DB;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">bgcolor</span>=<span class="hljs-value">&quot;#ffffff&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131783.html&quot;</span>&gt;</span>&#x7B2C;&#x4E94;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131784.html&quot;</span>&gt;</span>&#x7B2C;&#x516D;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131785.html&quot;</span>&gt;</span>&#x7B2C;&#x4E03;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131786.html&quot;</span>&gt;</span>&#x7B2C;&#x516B;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">bgcolor</span>=<span class="hljs-value">&quot;#ffffff&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131787.html&quot;</span>&gt;</span>&#x7B2C;&#x4E5D;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;131788.html&quot;</span>&gt;</span>&#x7B2C;&#x5341;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>&amp;nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>&amp;nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+</code></pre>
+<p>&#x5148;&#x6293;&#x5927;&#x518D;&#x6293;&#x5C0F;</p>
+<h2 id="&#x83B7;&#x53D6;&#x6587;&#x7AE0;&#x5185;&#x5BB9;">&#x83B7;&#x53D6;&#x6587;&#x7AE0;&#x5185;&#x5BB9;</h2>
+<p>&#x6CE8;&#x610F;&#x89C2;&#x5BDF;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6587;&#x7AE0;&#x5185;&#x5BB9;&#x5305;&#x542B;&#x5728;&#x4E00;&#x5BF9;p&#x6807;&#x7B7E;&#x5185;&#x3002;&#x8FD9;&#x4E9B;&#x6B63;&#x6587;&#x5185;&#x5BB9;&#x91CC;&#x9762;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x53EA;&#x6709;<br>&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x7528;replace&#x5C06;br&#x6807;&#x7B7E;&#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="&#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x540D;&#x79F0;">&#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x540D;&#x79F0;</h2>
+<pre><code class="lang-html">size=&quot;4&quot;&gt; &#x7B2C;&#x4E00;&#x7AE0;<span class="hljs-tag">&lt;/<span class="hljs-title">font</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+</code></pre>
+<h2 id="&#x6700;&#x7EC8;&#x4EE3;&#x7801;">&#x6700;&#x7EC8;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">from</span> multiprocessing.dummy <span class="hljs-keyword">import</span> Pool
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_toc</span><span class="hljs-params">(basic_url, html)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x7AE0;&#x7684;url&#x94FE;&#x63A5;&#xFF0C;&#x5B58;&#x50A8;&#x5230;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x5E76;&#x8FD4;&#x56DE;
+    :param basic_url: &#x57FA;&#x7840;url
+    :param html: &#x6E90;&#x4EE3;&#x7801;
+    :return: url&#x94FE;&#x63A5;
+    &quot;&quot;&quot;</span>
+    toc_url_list = []
+    toc_block = re.findall(<span class="hljs-string">&apos;&#x6B63;&#x6587;(.*?)&lt;/tbody&gt;&apos;</span>, html, re.S)[<span class="hljs-number">0</span>]
+    toc_url = re.findall(<span class="hljs-string">&apos;href=&quot;(.*?)&quot;&apos;</span>, toc_block, re.S)
+    <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> toc_url:
+        toc_url_list.append(basic_url + url)
+
+    <span class="hljs-keyword">return</span> toc_url_list
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_article</span><span class="hljs-params">(html)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x7AE0;&#x7684;&#x6B63;&#x6587;&#x5E76;&#x8FD4;&#x56DE;&#x7AE0;&#x8282;&#x540D;&#x548C;&#x6B63;&#x6587;
+    :param html: &#x6B63;&#x6587;&#x6E90;&#x4EE3;&#x7801;
+    :return: &#x7AE0;&#x8282;&#x540D;&#x3001;&#x6B63;&#x6587;
+    &quot;&quot;&quot;</span>
+    chapter_name = re.search(<span class="hljs-string">&apos;size=&quot;4&quot;&gt;(.*?)&lt;/font&apos;</span>, html, re.S).group(<span class="hljs-number">1</span>)
+    text_block = re.search(<span class="hljs-string">&apos;&lt;p&gt;(.*?)&lt;/p&gt;&apos;</span>, html, re.S).group(<span class="hljs-number">1</span>)
+    text_block = text_block.replace(<span class="hljs-string">&apos;&lt;br /&gt;&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+    text_block = text_block.replace(<span class="hljs-string">&apos;&amp;nbsp;&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+    <span class="hljs-keyword">return</span> chapter_name, text_block
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save</span><span class="hljs-params">(chapter, article)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5C06;&#x6BCF;&#x4E00;&#x7AE0;&#x4FDD;&#x5B58;&#x5230;&#x672C;&#x5730;
+    :param chapter: &#x7AE0;&#x8282;&#x540D;
+    :param article: &#x6B63;&#x6587;&#x5185;&#x5BB9;
+    :return: None
+    &quot;&quot;&quot;</span>
+    os.makedirs(basic_folder, exist_ok=<span class="hljs-keyword">True</span>)
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;</span>
+    <span class="hljs-comment"># &#x53C2;&#x6570;: &#x6587;&#x4EF6;&#x5939;&#x540D;&#x79F0;;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5939;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x4E0D;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;</span>
+    file_path = os.path.join(basic_folder, chapter + <span class="hljs-string">&apos;.txt&apos;</span>)
+    <span class="hljs-keyword">with</span> open(file_path, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> f:
+        f.write(article)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span><span class="hljs-params">(url)</span>:</span>
+    html_content = requests.get(url).content.decode(<span class="hljs-string">&apos;gb2312&apos;</span>)
+    <span class="hljs-keyword">return</span> html_content
+
+
+<span class="hljs-comment"># &#x6267;&#x884C;&#x6293;&#x53D6;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_scrap</span><span class="hljs-params">(url)</span>:</span>
+    chapter_html = query(url)
+    chapter_article = get_article(chapter_html)
+    save(chapter_article[<span class="hljs-number">0</span>], chapter_article[<span class="hljs-number">1</span>])
+
+
+<span class="hljs-comment"># &#x6293;&#x53D6;</span>
+
+basic_url = <span class="hljs-string">&apos;https://www.kanunu8.com/book3/7576/&apos;</span>
+basic_folder = <span class="hljs-string">&apos;&#x5076;&#x5C14;&#x8FDC;&#x884C;&apos;</span>
+
+html = query(basic_url)
+toc_link_list = get_toc(basic_url, html)
+
+start = time.time()
+<span class="hljs-comment"># &#x7528;&#x65F6;&#x8BA1;&#x7B97;</span>
+<span class="hljs-comment"># &#x7EBF;&#x7A0B;&#x6C60;10&#xFF1A;40.76615071296692</span>
+<span class="hljs-comment"># &#x7EBF;&#x7A0B;&#x6C60;20: 13.25427770614624</span>
+<span class="hljs-comment"># &#x7EBF;&#x7A0B;&#x6C60;25: 8.855741739273071</span>
+<span class="hljs-comment"># &#x7EBF;&#x7A0B;&#x6C60;30&#xFF1A;7.507011890411377</span>
+pool = Pool(<span class="hljs-number">30</span>)
+pool.map(do_scrap, toc_link_list)
+end = time.time()
+print(f<span class="hljs-string">&apos;&#x7528;&#x65F6;:{end-start}&apos;</span>)
+</code></pre>
+<p>&#x5957;&#x7528;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x6293;&#x53D6;&#x591A;&#x4E2A;&#x5C0F;&#x8BF4;&#x3002;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5927;&#x5C0F;&#x9700;&#x8981;&#x4F18;&#x5316;&#xFF0C;&#x76EE;&#x524D;30&#x4E3A;&#x6700;&#x4F18;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./简单的网页爬虫开发.html" class="navigation navigation-prev " aria-label="Previous page: 简单的网页爬虫开发"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./快速解析html.html" class="navigation navigation-next " aria-label="Next page: 快速解析 HTML"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>实验：采集贴吧信息 | 《Python 爬虫开发：从入门到实战》读书笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./简单的网页爬虫开发.html" />
+    
+    
+    <link rel="prev" href="./正则表达式与文件操作.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.1"
+        data-chapter-title="实验：采集贴吧信息"
+        data-filepath="采集贴吧信息.md"
+        data-basepath="."
+        data-revision="Sun Nov 17 2019 21:30:52 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="爬虫概述.html">
+            
+                
+                    <a href="./爬虫概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        爬虫概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python语法基础.html">
+            
+                
+                    <a href="./python语法基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python 语法基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="正则表达式与文件操作.html">
+            
+                
+                    <a href="./正则表达式与文件操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        正则表达式与文件操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="采集贴吧信息.html">
+            
+                
+                    <a href="./采集贴吧信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        实验：采集贴吧信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="简单的网页爬虫开发.html">
+            
+                
+                    <a href="./简单的网页爬虫开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        简单的网页爬虫开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="抓取小说动物农场.html">
+            
+                
+                    <a href="./抓取小说动物农场.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        实验: 抓取小说动物农场
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="快速解析html.html">
+            
+                
+                    <a href="./快速解析html.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        快速解析 HTML
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="抓取大麦网爬虫.html">
+            
+                
+                    <a href="./抓取大麦网爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        实验: 抓取大麦网爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="抓取许嵩相关帖子.html">
+            
+                
+                    <a href="./抓取许嵩相关帖子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        实验: 抓取许嵩相关帖子
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="mongodb与redis.html">
+            
+                
+                    <a href="./mongodb与redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        MongoDB 与 Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="抓取小说白夜行的正文内容.html">
+            
+                
+                    <a href="./抓取小说白夜行的正文内容.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        实验：抓取小说白夜行的正文内容
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="异步加载与请求头.html">
+            
+                
+                    <a href="./异步加载与请求头.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        异步加载与请求头
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="抓取乐视网视频评论信息.html">
+            
+                
+                    <a href="./抓取乐视网视频评论信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        实验：抓取乐视网视频评论信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" >
+            
+            <span><b>8.</b> 综合实验</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="使用Fiddler抓取微信饿了么小程序数据.html">
+            
+                
+                    <a href="./使用Fiddler抓取微信饿了么小程序数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        使用 Fiddler 抓取微信饿了么小程序数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >《Python 爬虫开发：从入门到实战》读书笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x91C7;&#x96C6;&#x8D34;&#x5427;&#x4FE1;&#x606F;">&#x91C7;&#x96C6;&#x8D34;&#x5427;&#x4FE1;&#x606F;</h1>
+<p>&#x6253;&#x5F00;&#x8D34;&#x5427;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5E16;&#x5B50;&#xFF0C;&#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;&#x4E3A;source.txt,&#x63D0;&#x53D6;&#x5176;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x540D;&#x3001;&#x53D1;&#x5E16;&#x5185;&#x5BB9;&#x548C;&#x53D1;&#x5E16;&#x65F6;&#x95F4;&#xFF0C;&#x4FDD;&#x5B58;&#x4E3A;result.csv&#x9875;&#x9762;&#x3002;</p>
+<h2 id="&#x5206;&#x6790;&#x9875;&#x9762;">&#x5206;&#x6790;&#x9875;&#x9762;</h2>
+<h3 id="&#x7528;&#x6237;&#x540D;">&#x7528;&#x6237;&#x540D;</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> 
+ <span class="hljs-attribute">data-field</span>=<span class="hljs-value">&quot;{&amp;quot;un&amp;quot;:&amp;quot;\u4f60\u978b\u5e95\u7834\u4e86&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;255fe4bda0e99e8be5ba95e7a0b4e4ba86003a?t=1387688649&amp;quot;}&quot;</span> 
+<span class="hljs-attribute">alog-group</span>=<span class="hljs-value">&quot;p_author&quot;</span> 
+<span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;p_author_name j_user_card&quot;</span> 
+<span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;/home/main?un=%E4%BD%A0%E9%9E%8B%E5%BA%95%E7%A0%B4%E4%BA%86&amp;amp;ie=utf-8&amp;amp;id=255fe4bda0e99e8be5ba95e7a0b4e4ba86003a?t=1387688649&amp;amp;fr=pb&quot;</span> 
+<span class="hljs-attribute">target</span>=<span class="hljs-value">&quot;_blank&quot;</span>&gt;</span>&#x4F60;&#x978B;&#x5E95;&#x7834;&#x4E86;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>&#x6709;&#x4E2A;&#x4E13;&#x95E8;&#x7684;<code>class=&quot;p_author_name j_user_card&quot;</code></p>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x5730;&#x65B9;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">username</span>=<span class="hljs-value">&quot;&#x4F60;&#x978B;&#x5E95;&#x7834;&#x4E86;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;https://gss0.bdstatic.com/6LZ1dD3d1sgCo2Kml5_Y_D3/sys/portrait/item/255fe4bda0e99e8be5ba95e7a0b4e4ba86003a?t=1387688649&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<h4 id="&#x6B63;&#x5219;">&#x6B63;&#x5219;</h4>
+<pre><code class="lang-python">username=<span class="hljs-string">&quot;(.*?)&quot;</span>
+</code></pre>
+<h3 id="&#x5E16;&#x5B50;&#x5185;&#x5BB9;">&#x5E16;&#x5B50;&#x5185;&#x5BB9;</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> 
+     <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;post_content_127415910631&quot;</span> 
+     <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;d_post_content j_d_post_content &quot;</span> 
+     <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;display:;&quot;</span>&gt;</span>            
+    &#x5176;&#x5B9E;&#x7F51;&#x7EDC;&#x66B4;&#x529B;&#x624D;&#x662F;&#x76EE;&#x524D;&#x6700;&#x5927;&#x7684;&#x963B;&#x788D;&#xFF0C;&#x5176;&#x4ED6;&#x65B9;&#x9762;&#x4E00;&#x65F6;&#x534A;&#x4F1A;&#x4E5F;&#x89E3;&#x51B3;&#x4E0D;&#x4E86;&#xFF0C;&#x7537;&#x7BEE;&#x672C;&#x6765;&#x5B9E;&#x529B;&#x5C31;&#x4E0D;&#x884C;&#xFF0C;&#x9760;&#x7740;&#x4E1C;&#x9053;&#x4E3B;&#x4E3B;&#x573A;&#x4F18;&#x52BF;&#x8DDF;&#x4E00;&#x53E3;&#x6C14;&#x540A;&#x7740;&#x7684;&#xFF0C;&#x8FD9;&#x53EF;&#x597D;&#xFF0C;&#x6253;&#x6CE2;&#x5170;&#x8F93;&#x4E86;&#x770B;&#x770B;&#x90A3;&#x7F51;&#x7EDC;&#x66B4;&#x529B;&#xFF0C;&#x7CBE;&#x6C14;&#x795E;&#x513F;&#x90FD;&#x7ED9;&#x55B7;&#x6CA1;&#x4E86;&#xFF0C;&#x8FD0;&#x52A8;&#x5458;&#x4F30;&#x8BA1;&#x6CA1;&#x51E0;&#x4E2A;&#x7761;&#x7684;&#x7740;&#x7684;&#xFF0C;&#x6253;&#x59D4;&#x5185;&#x745E;&#x62C9;&#x5C31;&#x663E;&#x9732;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x60F3;&#x4F7F;&#x52B2;&#x4F7F;&#x4E0D;&#x51FA;&#xFF0C;&#x62FC;&#x90FD;&#x4E0D;&#x77E5;&#x9053;&#x8BE5;&#x548B;&#x62FC;&#x4E86;&#xFF0C;&#x771F;&#x68D2;&#xFF0C;&#x55B7;&#x5B50;&#x4EEC;&#x7EE7;&#x7EED;&#x5427;&#xFF0C;&#x8BA8;&#x8BBA;&#x5F52;&#x8BA8;&#x8BBA;&#xFF0C;&#x65BD;&#x538B;&#x5F52;&#x65BD;&#x538B;&#xFF0C;&#x7F51;&#x7EDC;&#x66B4;&#x529B;&#x662F;&#x51E0;&#x4E2A;&#x610F;&#x601D;&#xFF1F;&#x770B;&#x770B;&#x90A3;&#x4E9B;&#x65B0;&#x51FA;&#x7684;&#x540D;&#x6B21;&#xFF0C;&#x4F60;&#x4EEC;&#x662F;&#x723D;&#x4E86;&#xFF0C;&#x7537;&#x7BEE;&#x6210;&#x7EE9;&#x4F1A;&#x66F4;&#x5DEE;&#x7684;<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>&#x6709;&#x4E2A;&#x4E13;&#x95E8;&#x7684;<code>class=&quot;d_post_content j_d_post_content &quot;</code></p>
+<h4 id="&#x6B63;&#x5219;">&#x6B63;&#x5219;</h4>
+<pre><code class="lang-python">class=&quot;d_post_content j_d_post_content &quot;(.*?)&lt;
+</code></pre>
+<h3 id="&#x53D1;&#x5E16;&#x65F6;&#x95F4;">&#x53D1;&#x5E16;&#x65F6;&#x95F4;</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;post-tail-wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;j_jb_ele&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;noopener&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;###&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tail-info&quot;</span> <span class="hljs-attribute">data-checkun</span>=<span class="hljs-value">&quot;un&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon-jubao&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;//tb2.bdstatic.com/tb/static-pb/img/jubao_button_5f60185.png&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tail-info&quot;</span>&gt;</span>
+        &#x6765;&#x81EA;<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;noopener&quot;</span> <span class="hljs-attribute">data-tip</span>=<span class="hljs-value">&quot;&#x8D85;&#x840C;&#x6001;&#x52A8;&#x753B;&#x8868;&#x60C5;&#x6765;&#x88AD;&#xFF0C;&#x901F;&#x5EA6;&#x62A2;&#x5148;&#x4F53;&#x9A8C;&#xFF01;&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://c.tieba.baidu.com/c/s/download/pc?src=webtbGF&quot;</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">&quot;_blank&quot;</span>&gt;</span>
+        Android&#x5BA2;&#x6237;&#x7AEF;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tail-info&quot;</span>&gt;</span>2&#x697C;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tail-info&quot;</span>&gt;</span>2019-09-05 11:03<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>&#x6709;&#x4E2A;<code>class=&quot;post-tail-wrap&quot;</code>&#x4E14;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x3002;x</p>
+<h4 id="&#x6B63;&#x5219;">&#x6B63;&#x5219;</h4>
+<pre><code class="lang-python">tail-info&quot;&gt;(201[0-9].*?)&lt;
+</code></pre>
+<h2 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h2>
+<h3 id="&#x65B9;&#x6CD5;&#x4E00;">&#x65B9;&#x6CD5;&#x4E00;</h3>
+<p>&#x5206;&#x522B;&#x5339;&#x914D;&#x7528;&#x6237;&#x540D;&#x3001;&#x5E16;&#x5B50;&#x5185;&#x5BB9;&#x3001;&#x56DE;&#x590D;&#x65F6;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x7EC4;&#x88C5;&#x6210;&#x5B57;&#x5178;&#xFF0C;&#x7EC4;&#x6210;csv&#x6570;&#x636E;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> csv
+
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;source.txt&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> f:
+    source = f.read()
+
+result_list = []
+username_list = re.findall(<span class="hljs-string">&apos;username=&quot;(.*?)&quot;&apos;</span>, source, re.S)
+content_list = re.findall(<span class="hljs-string">&apos;d_post_content j_d_post_content &quot; style=\&quot;display:;\&quot;&gt;            (.*?)&lt;&apos;</span>, source, re.S)
+reply_time_list = re.findall(<span class="hljs-string">&apos;tail-info&quot;&gt;(201[0-9].*?)&lt;&apos;</span>, source, re.S)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(username_list)):
+    result = {<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&apos;</span>: username_list[i], <span class="hljs-string">&apos;&#x5E16;&#x5B50;&apos;</span>: content_list[i], <span class="hljs-string">&apos;&#x56DE;&#x590D;&#x65F6;&#x95F4;&apos;</span>: reply_time_list[i]}
+    result_list.append(result)
+
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;tieba.csv&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>, newline=<span class="hljs-string">&apos;&apos;</span>) <span class="hljs-keyword">as</span> f:
+    writer = csv.DictWriter(f, fieldnames=[<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&apos;</span>, <span class="hljs-string">&apos;&#x5E16;&#x5B50;&apos;</span>, <span class="hljs-string">&apos;&#x56DE;&#x590D;&#x65F6;&#x95F4;&apos;</span>])
+    writer.writeheader()
+    writer.writerows(result_list)
+</code></pre>
+<h3 id="&#x65B9;&#x6CD5;&#x4E8C;">&#x65B9;&#x6CD5;&#x4E8C;</h3>
+<p>&#x91C7;&#x96C6;&#x67D0;&#x4E00;&#x4E2A;&#x5E16;&#x5B50;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x53D6;&#x51FA;&#x7528;&#x6237;&#x540D;&#x3001;&#x5E16;&#x5B50;&#x5185;&#x5BB9;&#x3001;&#x5BC6;&#x7801;&#x7136;&#x540E;&#x7EC4;&#x88C5;&#x6210;csv&#x6570;&#x636E;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./正则表达式与文件操作.html" class="navigation navigation-prev " aria-label="Previous page: 正则表达式与文件操作"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./简单的网页爬虫开发.html" class="navigation navigation-next " aria-label="Next page: 简单的网页爬虫开发"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

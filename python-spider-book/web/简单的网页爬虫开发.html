@@ -1,0 +1,548 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>简单的网页爬虫开发 | 《Python 爬虫开发：从入门到实战》读书笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./抓取小说动物农场.html" />
+    
+    
+    <link rel="prev" href="./采集贴吧信息.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4"
+        data-chapter-title="简单的网页爬虫开发"
+        data-filepath="简单的网页爬虫开发.md"
+        data-basepath="."
+        data-revision="Sun Nov 17 2019 21:30:52 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="爬虫概述.html">
+            
+                
+                    <a href="./爬虫概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        爬虫概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python语法基础.html">
+            
+                
+                    <a href="./python语法基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python 语法基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="正则表达式与文件操作.html">
+            
+                
+                    <a href="./正则表达式与文件操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        正则表达式与文件操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="采集贴吧信息.html">
+            
+                
+                    <a href="./采集贴吧信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        实验：采集贴吧信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="4" data-path="简单的网页爬虫开发.html">
+            
+                
+                    <a href="./简单的网页爬虫开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        简单的网页爬虫开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="抓取小说动物农场.html">
+            
+                
+                    <a href="./抓取小说动物农场.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        实验: 抓取小说动物农场
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="快速解析html.html">
+            
+                
+                    <a href="./快速解析html.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        快速解析 HTML
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="抓取大麦网爬虫.html">
+            
+                
+                    <a href="./抓取大麦网爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        实验: 抓取大麦网爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="抓取许嵩相关帖子.html">
+            
+                
+                    <a href="./抓取许嵩相关帖子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        实验: 抓取许嵩相关帖子
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="mongodb与redis.html">
+            
+                
+                    <a href="./mongodb与redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        MongoDB 与 Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="抓取小说白夜行的正文内容.html">
+            
+                
+                    <a href="./抓取小说白夜行的正文内容.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        实验：抓取小说白夜行的正文内容
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="异步加载与请求头.html">
+            
+                
+                    <a href="./异步加载与请求头.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        异步加载与请求头
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="抓取乐视网视频评论信息.html">
+            
+                
+                    <a href="./抓取乐视网视频评论信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        实验：抓取乐视网视频评论信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" >
+            
+            <span><b>8.</b> 综合实验</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="使用Fiddler抓取微信饿了么小程序数据.html">
+            
+                
+                    <a href="./使用Fiddler抓取微信饿了么小程序数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        使用 Fiddler 抓取微信饿了么小程序数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >《Python 爬虫开发：从入门到实战》读书笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7B80;&#x5355;&#x81EA;&#x52A8;&#x5316;&#x722C;&#x866B;&#x5F00;&#x53D1;">&#x7B80;&#x5355;&#x81EA;&#x52A8;&#x5316;&#x722C;&#x866B;&#x5F00;&#x53D1;</h1>
+<h2 id="requests&#x5E93;get&#x548C;post">requests&#x5E93;:get&#x548C;post</h2>
+<h4 id="get">get</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> requests
+requests.get(url).content.decode()
+</code></pre>
+<p>request.get(&apos;url&apos;) // get&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Response&#x5BF9;&#x8C61;&#x3002;</p>
+<p>.content &#x663E;&#x793A;byte&#x578B;&#x7684;&#x7F51;&#x9875;&#x6E90;&#x4EE3;&#x7801;</p>
+<p>decode &#x5C06;byte&#x578B;&#x7684;&#x7F51;&#x9875;&#x6E90;&#x4EE3;&#x7801;&#x89E3;&#x7801;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x578B;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF08;&#x4E2D;&#x6587;&#xFF09;&#xFF0C;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x89E3;&#x7801;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;</p>
+<ul>
+<li>decode(&apos;utf-8/gb2312/gb18030&apos;)</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x83B7;&#x53D6;&#x7F51;&#x9875;&#x6E90;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">import</span> requests
+
+html_str = requests.get(<span class="hljs-string">&apos;https://www.cnblogs.com/lsm-boke/p/8849067.html&apos;</span>).content.decode()
+print(html_str)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># get&#x548C;&#x6B63;&#x5219;&#x5339;&#x914D;&#x4F7F;&#x7528;</span>
+<span class="hljs-comment"># get&#x65B9;&#x5F0F;&#x83B7;&#x53D6;</span>
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> re
+
+web_content = requests.get(<span class="hljs-string">&apos;http://exercise.kingname.info/exercise_requests_get.html&apos;</span>).content.decode()
+
+<span class="hljs-comment"># &#x6807;&#x9898;</span>
+title = re.search(<span class="hljs-string">&apos;title&gt;(.*?)&lt;&apos;</span>, web_content, re.S).group(<span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># &#x63D0;&#x53D6;&#x5185;&#x5BB9;</span>
+content_list = re.findall(<span class="hljs-string">&apos;&lt;p&gt;(.*?)&lt;&apos;</span>, web_content, re.S)
+content_str = <span class="hljs-string">&apos;\n&apos;</span>.join(content_list)
+print(content_str)
+</code></pre>
+<h4 id="post">post</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> requests
+data = {<span class="hljs-string">&apos;key1&apos;</span>:<span class="hljs-string">&apos;value1&apos;</span>,<span class="hljs-string">&apos;key2&apos;</span>:<span class="hljs-string">&apos;value2&apos;</span>}
+<span class="hljs-comment"># &#x666E;&#x901A;&#x7684;&#x8868;&#x5355;&#x63D0;&#x4EA4;</span>
+html_formdata = requests.post(url, data=data).content.decode()
+
+<span class="hljs-comment"># &#x63D0;&#x4EA4;&#x7684;&#x5185;&#x5BB9;&#x4E3A;json&#x683C;&#x5F0F;</span>
+html_json = requests.post(url, json=data).content.decode()
+</code></pre>
+<p>&#x535A;&#x5BA2;&#x56ED;&#x91CC;&#x9762;&#x7684;&#x76F8;&#x5173;&#x535A;&#x6587;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> requests
+data = {<span class="hljs-string">&quot;itemId&quot;</span>:<span class="hljs-number">8849067</span>,<span class="hljs-string">&quot;itemTitle&quot;</span>:<span class="hljs-string">&quot;&#x5982;&#x4F55;&#x5728;Pycharm&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x6A21;&#x5757;&quot;</span>}
+html_json = requests.post(<span class="hljs-string">&apos;https://recomm.cnblogs.com/api/v2/recomm/blogpost/reco&apos;</span>,json=data).content.decode()
+print(html_json)
+</code></pre>
+<h2 id="&#x591A;&#x7EBF;&#x7A0B;&#x722C;&#x866B;">&#x591A;&#x7EBF;&#x7A0B;&#x722C;&#x866B;</h2>
+<h3 id="&#x5355;&#x7EBF;&#x7A0B;">&#x5355;&#x7EBF;&#x7A0B;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+
+<span class="hljs-keyword">import</span> requests
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span><span class="hljs-params">(url)</span>:</span>
+    requests.get(url)
+
+
+start = time.time()
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>):
+    query(<span class="hljs-string">&apos;https://www.baidu.com&apos;</span>)
+end = time.time()
+<span class="hljs-comment"># &#x5355;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;31.540141344070435</span>
+print(f<span class="hljs-string">&apos;&#x5355;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;{end - start}&apos;</span>)
+</code></pre>
+<h3 id="&#x591A;&#x7EBF;&#x7A0B;">&#x591A;&#x7EBF;&#x7A0B;</h3>
+<p>python&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x5176;&#x5B9E;&#x662F;&#x4F2A;&#x591A;&#x7EBF;&#x7A0B;(&#x5168;&#x5C40;&#x89E3;&#x91CA;&#x5668;Global Interpreter Lock)_&#xFF0C;&#x672C;&#x8D28;&#x8FD8;&#x662F;&#x4E00;&#x4E2A;&#x53BF;&#x57CE;&#xFF0C;&#x4F46;&#x662F;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x6BCF;&#x4EF6;&#x4E8B;&#x60C5;&#x53EA;&#x505A;&#x51E0;&#x6BEB;&#x79D2;&#xFF0C;&#x51E0;&#x6BEB;&#x79D2;&#x4EE5;&#x540E;&#x5C31;&#x4FDD;&#x5B58;&#x73B0;&#x573A;&#xFF0C;&#x6362;&#x505A;&#x5176;&#x4ED6;&#x4E8B;&#x60C5;&#xFF0C;&#x51E0;&#x6BEB;&#x79D2;&#x540E;&#x518D;&#x505A;&#x5176;&#x4ED6;&#x4E8B;&#x60C5;&#xFF0C;&#x4E00;&#x8F6E;&#x4E4B;&#x540E;&#x56DE;&#x5230;&#x7B2C;&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;&#x4E0A;&#x3002;&#x5207;&#x6362;&#x7EBF;&#x7A0B;&#x9700;&#x8981;&#x65F6;&#x95F4;&#x3002;&#x591A;&#x7EBF;&#x7A0B;&#x9002;&#x5408;I/O&#x5BC6;&#x96C6;&#x578B;&#x64CD;&#x4F5C;&#x3002;&#x722C;&#x866B;&#x5C5E;&#x4E8E;IO&#x5BC6;&#x96C6;&#x578B;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>multiprocessing&#x591A;&#x8FDB;&#x7A0B;&#x5E93;&#xFF0C;&#x5176;&#x4E2D;&#x7684;dummy&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x7EBF;&#x7A0B;&#x3002;dummy&#x4E0B;&#x7684;Pool&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;map&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x7EBF;&#x7A0B;&#x6C60;&#x91CC;&#x9762;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x90FD;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing.dummy <span class="hljs-keyword">import</span> Pool
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x67D0;&#x4E9B;&#x6570;&#x7684;&#x5E73;&#x65B9;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+    print(i**i)
+
+
+<span class="hljs-comment"># &#x591A;&#x7EBF;&#x7A0B;&#x8BA1;&#x7B97;&#x67D0;&#x4E9B;&#x6570;&#x7684;&#x5E73;&#x65B9;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calc_power</span><span class="hljs-params">(num)</span>:</span>
+    <span class="hljs-keyword">return</span> num**num
+
+
+<span class="hljs-comment"># &#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;3&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;, &#x7EBF;&#x7A0B;&#x6C60;&#x8D1F;&#x8D23;10&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x5E73;&#x65B9;&#x8BA1;&#x7B97;</span>
+pool = Pool(<span class="hljs-number">3</span>)
+<span class="hljs-comment"># &#x5217;&#x8868;&#x751F;&#x6210;0-9</span>
+<span class="hljs-comment"># origin_num = [x for x in range(10)]</span>
+origin_num = range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>)
+print(origin_num)
+<span class="hljs-comment"># map(&#x51FD;&#x6570;&#x540D;&#x5B57;&#xFF0C;&#x5217;&#x8868;&#x3001;&#x5143;&#x7956;&#x3001;&#x96C6;&#x5408;&#x6216;&#x8005;&#x5B57;&#x5178;)</span>
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#x6C60;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span>
+result = pool.map(calc_power, origin_num)
+print(f<span class="hljs-string">&apos;&#x8BA1;&#x7B97;0-9&#x7684;&#x5E73;&#x65B9;&#x5206;&#x522B;&#x4E3A;:{result}&apos;</span>)
+</code></pre>
+<p>&#x5B9E;&#x4F8B;&#xFF1A;&#x8BBF;&#x95EE;100&#x6B21;&#x767E;&#x5EA6;&#x9996;&#x9875;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">from</span> multiprocessing.dummy <span class="hljs-keyword">import</span> Pool
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span><span class="hljs-params">(url)</span>:</span>
+    requests.get(url)
+
+
+start = time.time()
+url_list = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>):
+    url_list.append(<span class="hljs-string">&apos;https://www.baidu.com&apos;</span>)
+
+
+pool = Pool(<span class="hljs-number">15</span>)
+pool.map(query, url_list)
+end = time.time()
+
+<span class="hljs-comment"># 5&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;100&#x6B21;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;7.350023031234741</span>
+<span class="hljs-comment"># 10&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;100&#x6B21;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;4.08358097076416#</span>
+<span class="hljs-comment"># 15&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;100&#x6B21;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;2.8800082206726074</span>
+<span class="hljs-comment"># 20&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;100&#x6B21;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;4.940855503082275</span>
+print(f<span class="hljs-string">&apos;15&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;100&#x6B21;&#x767E;&#x5EA6;&#x9996;&#x9875;&#x7528;&#x65F6;{end - start}&apos;</span>)
+</code></pre>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5927;&#x5C0F;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x6765;&#x786E;&#x5B9A;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x786E;&#x5207;&#x7684;&#x6570;&#x636E;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x5177;&#x4F53;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E0B;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x5BF9;&#x6BD4;&#xFF0C;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x3002;&#x6BD4;&#x5982;&#x6B64;&#x4F8B;&#x4E2D;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5927;&#x5C0F;&#x4E3A;15&#x65F6;&#x4EC5;&#x4E3A;2s&#x591A;&#x5373;&#x53EF;&#x5168;&#x90E8;&#x8BBF;&#x95EE;&#x5B8C;&#x6BD5;</p>
+<h3 id="&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x5F02;&#x6B65;&#x6A21;&#x578B;">&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x5F02;&#x6B65;&#x6A21;&#x578B;</h3>
+<p>&#x95F9;&#x949F;&#xFF1A;&#x5230;&#x89C4;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x505A;&#x76F8;&#x5E94;&#x7684;&#x52A8;&#x4F5C;&#x5C31;&#x597D;&#xFF0C;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x6BCF;&#x5206;&#x6BCF;&#x79D2;&#x53BB;&#x68C0;&#x67E5;</p>
+<h2 id="&#x7B97;&#x6CD5;&#xFF1A;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x4E0E;&#x6DF1;&#x5EA6;--&#x4F18;&#x5148;&#x7B97;&#x6CD5;">&#x7B97;&#x6CD5;&#xFF1A;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x4E0E;&#x6DF1;&#x5EA6;  &#x4F18;&#x5148;&#x7B97;&#x6CD5;</h2>
+<h3 id="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x7B97;&#x6CD5;">&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x7B97;&#x6CD5;</h3>
+<p>&#x63A5;&#x4E0B;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#xFF0C;&#x5C42;&#x7EA7;&#x4F18;&#x5148;&#xFF0C;&#x5206;&#x652F;&#x6B21;&#x4E4B;</p>
+<h3 id="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x7B97;&#x6CD5;">&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x7B97;&#x6CD5;</h3>
+<p>&#x4E00;&#x4E2A;&#x9886;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x505A;&#x5B8C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x518D;&#x53BB;&#x9886;&#x4E0B;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x5206;&#x652F;&#x4F18;&#x5148;&#xFF0C;&#x5C42;&#x7EA7;&#x968F;&#x540E;</p>
+<h2 id="&#x91C7;&#x53D6;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x8FD8;&#x662F;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x7B97;&#x6CD5;">&#x91C7;&#x53D6;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x8FD8;&#x662F;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x7B97;&#x6CD5;</h2>
+<p>&#x5177;&#x4F53;&#x60C5;&#x51B5;&#xFF0C;&#x5177;&#x4F53;&#x5206;&#x6790;&#xFF0C;&#x5C06;&#x4E24;&#x8005;&#x7ED3;&#x5408;&#x8D77;&#x6765;</p>
+<h2 id="&#x5B9E;&#x4F8B;&#xFF1A;&#x6293;&#x53D6;&#x7F51;&#x7AD9;&#x5C0F;&#x8BF4;">&#x5B9E;&#x4F8B;&#xFF1A;&#x6293;&#x53D6;&#x7F51;&#x7AD9;&#x5C0F;&#x8BF4;</h2>
+<p><a href="&#x6293;&#x53D6;&#x5C0F;&#x8BF4;&#x52A8;&#x7269;&#x519C;&#x573A;.html">&#x6293;&#x53D6;&#x5C0F;&#x8BF4;&#x52A8;&#x7269;&#x519C;&#x573A;</a></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./采集贴吧信息.html" class="navigation navigation-prev " aria-label="Previous page: 实验：采集贴吧信息"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./抓取小说动物农场.html" class="navigation navigation-next " aria-label="Next page: 实验: 抓取小说动物农场"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

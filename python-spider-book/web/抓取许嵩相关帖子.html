@@ -1,0 +1,446 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>实验: 抓取许嵩相关帖子 | 《Python 爬虫开发：从入门到实战》读书笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./mongodb与redis.html" />
+    
+    
+    <link rel="prev" href="./抓取大麦网爬虫.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.2"
+        data-chapter-title="实验: 抓取许嵩相关帖子"
+        data-filepath="抓取许嵩相关帖子.md"
+        data-basepath="."
+        data-revision="Sun Nov 17 2019 21:30:52 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="爬虫概述.html">
+            
+                
+                    <a href="./爬虫概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        爬虫概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="python语法基础.html">
+            
+                
+                    <a href="./python语法基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        python 语法基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="正则表达式与文件操作.html">
+            
+                
+                    <a href="./正则表达式与文件操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        正则表达式与文件操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="采集贴吧信息.html">
+            
+                
+                    <a href="./采集贴吧信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        实验：采集贴吧信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="简单的网页爬虫开发.html">
+            
+                
+                    <a href="./简单的网页爬虫开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        简单的网页爬虫开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="抓取小说动物农场.html">
+            
+                
+                    <a href="./抓取小说动物农场.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        实验: 抓取小说动物农场
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="快速解析html.html">
+            
+                
+                    <a href="./快速解析html.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        快速解析 HTML
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="抓取大麦网爬虫.html">
+            
+                
+                    <a href="./抓取大麦网爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        实验: 抓取大麦网爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="抓取许嵩相关帖子.html">
+            
+                
+                    <a href="./抓取许嵩相关帖子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        实验: 抓取许嵩相关帖子
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="mongodb与redis.html">
+            
+                
+                    <a href="./mongodb与redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        MongoDB 与 Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="抓取小说白夜行的正文内容.html">
+            
+                
+                    <a href="./抓取小说白夜行的正文内容.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        实验：抓取小说白夜行的正文内容
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="异步加载与请求头.html">
+            
+                
+                    <a href="./异步加载与请求头.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        异步加载与请求头
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="抓取乐视网视频评论信息.html">
+            
+                
+                    <a href="./抓取乐视网视频评论信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        实验：抓取乐视网视频评论信息
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" >
+            
+            <span><b>8.</b> 综合实验</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="使用Fiddler抓取微信饿了么小程序数据.html">
+            
+                
+                    <a href="./使用Fiddler抓取微信饿了么小程序数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        使用 Fiddler 抓取微信饿了么小程序数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >《Python 爬虫开发：从入门到实战》读书笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6293;&#x53D6;&#x8BB8;&#x5D69;&#x76F8;&#x5173;&#x5E16;&#x5B50;">&#x6293;&#x53D6;&#x8BB8;&#x5D69;&#x76F8;&#x5173;&#x5E16;&#x5B50;</h1>
+<p>&#x6309;&#x7167;&#x8981;&#x6C42;&#xFF0C;&#x5148;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#x6027;&#x6807;&#x7B7E;&#x5F00;&#x5934;&#x3002;&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5E16;&#x5B50;&#x6807;&#x9898;&#x6709;&#x4E00;&#x4E2A;class&#x5C5E;&#x6027;</p>
+<pre><code class="lang-python">&lt;div class=&quot;threadlist_title pull_left j_th_tit &quot;&gt;
+ ...
+&lt;/div&gt;
+</code></pre>
+<p>&#x7531;&#x6B64;&#xFF0C;&#x6784;&#x9020;&#x51FA;<code>xpath</code>&#x8BED;&#x53E5;</p>
+<pre><code class="lang-python">// div[@class=&quot;threadlist_title pull_left j_th_tit &quot;]/a/text()
+</code></pre>
+<h2 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> lxml.html
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">query</span><span class="hljs-params">(url)</span>:</span>
+    html_page = requests.get(url).content
+    <span class="hljs-keyword">return</span> html_page
+
+
+<span class="hljs-comment"># &#x5F00;&#x59CB;&#x6293;&#x53D6;</span>
+html_content = query(<span class="hljs-string">&apos;http://tieba.baidu.com/f?ie=utf-8&amp;kw=%E8%AE%B8%E5%B5%A9&amp;fr=search&amp;red_tag=i0173573712&apos;</span>)
+selector = lxml.html.fromstring(html_content)
+info = selector.xpath(<span class="hljs-string">&apos;//div[@class=&quot;threadlist_title pull_left j_th_tit &quot;]/a/text()&apos;</span>)
+file_path = os.path.join(os.getcwd(), <span class="hljs-string">&apos;xusong.txt&apos;</span>)
+<span class="hljs-keyword">with</span> open(file_path, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> f:
+    f.writelines([x+<span class="hljs-string">&apos;\n&apos;</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> info])
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./抓取大麦网爬虫.html" class="navigation navigation-prev " aria-label="Previous page: 实验: 抓取大麦网爬虫"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./mongodb与redis.html" class="navigation navigation-next " aria-label="Next page: MongoDB 与 Redis"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
