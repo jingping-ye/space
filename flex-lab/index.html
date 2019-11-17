@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>flex实验室</title>
+    <style type="text/css">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+      }
+
+      pre {
+        width: 800px;
+        font-size: 18px;
+        background: #000;
+        color: #339900;
+        border-radius: 10px;
+        border: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      li,
+      p {
+        margin: 20px;
+      }
+
+      style {
+        outline: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .container {
+        width: 800px;
+        border: 1px solid orange;
+        margin: 20px 0;
+        min-height: 400px;
+      }
+
+      #back {
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+        border: 1px solid #dedede;
+        padding: 10px;
+        border-radius: 5px;
+        background: #000;
+        color: #339900;
+        opacity: 0.8;
+        -moz-box-shadow: 2px 2px 5px #333333;
+        -webkit-box-shadow: 2px 2px 5px #333333;
+        box-shadow: 2px 2px 5px #333333;
+        height: 50px;
+        line-height: 50px;
+      }
+      .docs {
+        font-size: 18px;
+        color: #339900;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div><a href="#top" id="back">返回顶部</a></div>
+    <a id="top"></a>
+    <h1>flex实验室 <a href="./docs/" class="docs">[文档]</a></h1>
+    <h2>flex属性一览</h2>
+    <ul>
+      <a href="#container1">
+        <li>flex-direction:row(默认)|row-reverse|column|column-reverse</li>
+      </a>
+      <a href="#container2">
+        <li>flex-wrap:nowrap(默认) | wrap | wrap-reverse</li>
+      </a>
+      <a href="#container3">
+        <li>flex-flow:flex-direction 和 flex-wrap 的简写，默认为 row 和 nowrap</li>
+      </a>
+      <a href="#container4">
+        <li>justify-content:flex-start(默认)|flex-end|center|space-between|space-around</li>
+      </a>
+      <a href="#container5">
+        <li>align-items: flex-start | flex-end | center | baseline | stretch</li>
+      </a>
+      <a href="#container6">
+        <li>align-content:flex-start | flex-end | center | space-between | space-around | stretch</li>
+      </a>
+    </ul>
+    <h2>其他</h2>
+    <ul>
+      <a href="#12">
+        <li>1*2，1*3，1*4布局</li>
+      </a>
+      <a href="#21">
+        <li>2*1布局</li>
+      </a>
+      <a href="#22">
+        <li>2*2，2*3,2*4，3*3布局</li>
+      </a>
+    </ul>
+    <a id="container1"></a>
+    <h2>
+      flex-direction:row(默认)|row-reverse|column|column-reverse
+    </h2>
+    <p>决定主轴方向是垂直还是水平，即决定子元素的排列方向</p>
+    <pre>
+    <style style="display: block;" contenteditable="true">
+      .container1 {
+        display: flex;
+        flex-direction:row;
+      }
+      .item1 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+    </style>
+    </pre>
+    <div class="container container1">
+      <div class="item1">1</div>
+      <div class="item1">2</div>
+      <div class="item1">3</div>
+      <div class="item1">4</div>
+      <div class="item1">5</div>
+      <div class="item1">6</div>
+    </div>
+
+    <a id="container2"></a>
+    <h2>
+      flex-wrap:nowrap(默认) | wrap | wrap-reverse
+    </h2>
+    <p>是否换行</p>
+    <pre>
+    <style style="display: block;" contenteditable="true">
+      .container2 {
+        display: flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+      }
+      .item2 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+    </style>
+    </pre>
+    <div class="container container2">
+      <div class="item2">1</div>
+      <div class="item2">2</div>
+      <div class="item2">3</div>
+      <div class="item2">4</div>
+      <div class="item2">5</div>
+      <div class="item2">6</div>
+    </div>
+
+    <a id="container3"></a>
+    <h2>
+      flex-flow:[row(默认)|row-reverse|column|,nowrap(默认) | wrap | wrap-reverse]
+    </h2>
+    <p>flex-direction和flex-wrap的简写</p>
+    <pre>
+    <style style="display: block;" contenteditable="true">
+      .container3 {
+        display: flex;
+        flex-flow:row wrap;
+      }
+      .item3 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+    </style>
+    </pre>
+    <div class="container container3">
+      <div class="item3">1</div>
+      <div class="item3">2</div>
+      <div class="item3">3</div>
+      <div class="item3">4</div>
+      <div class="item3">5</div>
+      <div class="item3">6</div>
+    </div>
+
+    <a id="container4"></a>
+    <h2>
+      justify-content:flex-start(默认)|flex-end|center|space-between|space-around
+    </h2>
+    <p>水平对齐的方式</p>
+    <pre>
+    <style style="display: block;" contenteditable="true">
+      .container4 {
+        display: flex;
+        flex-grow:row;
+        justify-content:space-between;
+      }
+      .item4 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+    </style>
+    </pre>
+    <div class="container container4">
+      <div class="item4">1</div>
+      <div class="item4">2</div>
+      <div class="item4">3</div>
+      <div class="item4">4</div>
+      <div class="item4">5</div>
+      <div class="item4">6</div>
+    </div>
+
+    <a id="container5"></a>
+    <h2>
+      align-items:flex-start | flex-end | center | baseline | stretch
+    </h2>
+    <p>垂直对齐的方式</p>
+    <pre>
+    <style style="display: block;" contenteditable="true">
+      .container5 {
+        display: flex;
+        flex-grow:row;
+        align-items:center;
+      }
+      .item5 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+      .item5:last-child{
+        height:300px;
+      }
+    </style>
+    </pre>
+    <div class="container container5">
+      <div class="item5">1</div>
+      <div class="item5">2</div>
+      <div class="item5">3</div>
+      <div class="item5">4</div>
+      <div class="item5">5</div>
+      <div class="item5">6</div>
+    </div>
+
+    <a id="container6"></a>
+    <h2>
+      align-content:flex-start | flex-end | center | space-between | space-around | stretch;
+    </h2>
+    <p>子项目在容器中的垂直对齐方式，前提是要有多条轴线:容器有宽高，并且使用了换行</p>
+    <pre>
+    <style style="display: block;" contenteditable="true">
+      .container6 {
+        display: flex;
+        flex-flow:row wrap;
+        align-content:center;
+      }
+      .item6 {
+        width: 200px;
+        height: 100px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+      .item5:last-child{
+        height:300px;
+      }
+    </style>
+    </pre>
+    <div class="container container6">
+      <div class="item6">1</div>
+      <div class="item6">2</div>
+      <div class="item6">3</div>
+      <div class="item6">4</div>
+      <div class="item6">5</div>
+      <div class="item6">6</div>
+    </div>
+
+    <a id="12"></a>
+    <h2>
+      1*2、1*3、1*4布局
+    </h2>
+    <p>说明:以下为1*3布局,1*2和1*4布局只需要删或者增加div</p>
+    <pre>
+
+    <style style="display: block;" contenteditable="true">
+      .container7 {
+        display: flex;
+        flex-direction:row;
+      }
+      .item7 {
+        flex:1;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+    </style>
+    </pre>
+    <div class="container container7">
+      <div class="item7">1</div>
+      <div class="item7">2</div>
+      <div class="item7">3</div>
+    </div>
+
+    <a id="21"></a>
+    <h2>
+      2*1:两行&一列布局
+    </h2>
+    <p>说明:无</p>
+    <pre>
+
+    <style style="display: block;" contenteditable="true">
+      .container8 {
+        width:375px;
+        height:750px;
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+      }
+      .item8 {
+        width:200px;
+        height:200px;
+        background-color: orange;
+        margin: 10px;
+        color: #fff;
+        font-size: 30px;
+      }
+    </style>
+    </pre>
+    <div class="container container8">
+      <div class="item8">1</div>
+      <div class="item8">2</div>
+    </div>
+
+    <a id="33"></a>
+    <h2>
+      3*3:九宫局布局
+    </h2>
+    <p>说明:拆分为3行，按照1*3的思路解决，其余的2*2,2*3,2*4均按照此种方式解决</p>
+    <pre>
+
+    <style style="display: block;" contenteditable="true">
+      .container11 {
+        width:375px;
+        height:750px;
+      }
+      .sub-item{
+        display:flex;
+        flex-direction:row;
+      }
+      .item11 {
+        color: #fff;
+        font-size: 30px;
+        background-color: orange;
+        height:80px;
+        margin:10px;
+        flex:1;
+      }
+    </style>
+    </pre>
+    <div class="container container11">
+      <div class="sub-item">
+        <div class="item11">1</div>
+        <div class="item11">2</div>
+        <div class="item11">3</div>
+      </div>
+      <div class="sub-item">
+        <div class="item11">1</div>
+        <div class="item11">2</div>
+        <div class="item11">3</div>
+      </div>
+      <div class="sub-item">
+        <div class="item11">1</div>
+        <div class="item11">2</div>
+        <div class="item11">3</div>
+      </div>
+    </div>
+  </body>
+</html>
