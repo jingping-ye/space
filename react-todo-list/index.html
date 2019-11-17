@@ -152,6 +152,7 @@
             toDoList: data
           });
         }
+
         render() {
           return (
             <div>
@@ -168,7 +169,6 @@
           this.state = {
             affair: ''
           };
-          this.toDoList = this.props.toDoList;
           this.handleChange = this.handleChange.bind(this);
           this.addToDoList = this.addToDoList.bind(this);
         }
@@ -182,7 +182,7 @@
           if (this.state.affair.trim().length < 1) {
             alert('不能不输入哦!');
           } else {
-            this.toDoList = [...this.toDoList, { id: this.toDoList.length, content: this.state.affair }];
+            this.toDoList = [...this.props.toDoList, { id: this.props.toDoList.length, content: this.state.affair }];
             this.props.update && this.props.update(this.toDoList);
             this.setState({
               affair: ''
