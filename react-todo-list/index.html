@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>To-Do</title>
+    <style>
+      .to-do-page {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+      }
+
+      header {
+        font-size: 30px;
+        font-weight: 200;
+        font-family: fantasy;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      main {
+        border: 1px solid #dedede;
+        border-radius: 10px;
+        min-height: 200px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .add-form {
+        height: 40px;
+        background: #fff;
+        border: 4px solid rgb(74, 179, 74);
+      }
+
+      .add-ipt {
+        height: 36px;
+        width: 300px;
+        border: none;
+        outline: medium;
+        padding-left: 20px;
+      }
+
+      .add-btn {
+        height: 40px;
+        width: 70px;
+        background: rgb(74, 179, 74);
+        color: white;
+        border: none;
+        font-weight: bold;
+        outline: medium;
+      }
+
+      .list-item {
+        margin: 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .list-item input {
+        height: 25px;
+        font-weight: bold;
+        opacity: 0.6;
+        padding-left: 10px;
+      }
+
+      .list-item:hover {
+        cursor: pointer;
+      }
+
+      .operate-area span {
+        display: inline-block;
+        color: #7676d9;
+        margin-left: 10px;
+      }
+
+      .operate-area span:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="./lib/react.development.js"></script>
+    <script src="./lib/react-dom.development.js"></script>
+    <script src="./lib/babel.min.js"></script>
+    <script type="text/babel">
+      //  总页面
+      class ToDoPage extends React.Component {
+        render() {
+          return (
+            <div className='to-do-page'>
+              <Header />
+              <Main />
+              <Footer />
+            </div>
+          );
+        }
+      }
+      //  页头
+      class Header extends React.Component {
+        render() {
+          return <header>To-Do</header>;
+        }
+      }
+      // 内容
+      class Main extends React.Component {
+        render() {
+          return (
+            <main>
+              <ToDoBox />
+            </main>
+          );
+        }
+      }
+      //  页脚
+      class Footer extends React.Component {
+        render() {
+          return <footer> ©2019 仅做示例使用</footer>;
+        }
+      }
+      class ToDoBox extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            toDoList: [
+              {
+                id: 0,
+                content: '学习react'
+              },
+              {
+                id: 1,
+                content: '晚餐'
+              }
+            ]
+          };
+          this.update = this.update.bind(this);
+        }
+        //  更新toDoList对象
+        update(data) {
+          this.setState({
+            toDoList: data
+          });
+        }
+        render() {
+          return (
+            <div>
+              <AddAffairForm toDoList={this.state.toDoList} update={this.update} />
+              <ToDoList toDoList={this.state.toDoList} update={this.update} />
+            </div>
+          );
+        }
+      }
+      // 添加表单
+      class AddAffairForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            affair: ''
+          };
+          this.toDoList = this.props.toDoList;
+          this.handleChange = this.handleChange.bind(this);
+          this.addToDoList = this.addToDoList.bind(this);
+        }
+        handleChange(e) {
+          this.setState({
+            affair: e.target.value
+          });
+        }
+        addToDoList(e) {
+          e.preventDefault();
+          if (this.state.affair.trim().length < 1) {
+            alert('不能不输入哦!');
+          } else {
+            this.toDoList = [...this.toDoList, { id: this.toDoList.length, content: this.state.affair }];
+            this.props.update && this.props.update(this.toDoList);
+            this.setState({
+              affair: ''
+            });
+          }
+        }
+        render() {
+          let addAffairForm = (
+            <form onSubmit={this.addToDoList} className='add-form'>
+              <input
+                className='add-ipt'
+                type='text'
+                placeholder='今天做点什么呢?'
+                value={this.state.affair}
+                onChange={this.handleChange}
+                required
+              />
+              <input type='submit' value='加入计划' onSubmit={this.addToDoList} className='add-btn' />
+            </form>
+          );
+          return addAffairForm;
+        }
+      }
+      //  列表
+      class ToDoList extends React.Component {
+        constructor(props) {
+          super(props);
+          this.delete = this.delete.bind(this);
+          this.update = this.update.bind(this);
+        }
+        delete(id) {
+          let toDoList = [...this.props.toDoList];
+          toDoList = toDoList.filter(item => item.id !== id);
+          this.props.update && this.props.update(toDoList);
+        }
+        update(data) {
+          let toDoList = [...this.props.toDoList];
+          toDoList.map(item => {
+            if (item.id === data.id) {
+              item.content = data.content;
+            }
+          });
+          this.props.update && this.props.update(toDoList);
+        }
+        render() {
+          return (
+            <ul className='list'>
+              {this.props.toDoList.map((item, index) => {
+                return <ToDoListItem toDoListItem={item} key={item.id} delete={this.delete} update={this.update} />;
+              })}
+            </ul>
+          );
+        }
+      }
+      //  列表项
+      class ToDoListItem extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            item: Object.assign({}, this.props.toDoListItem),
+            isDisplay: false,
+            isEdit: false
+          };
+          this.toggleDisplay = this.toggleDisplay.bind(this);
+          this.handleChange = this.handleChange.bind(this);
+          this.cancelEdit = this.cancelEdit.bind(this);
+          this.handleEdit = this.handleEdit.bind(this);
+          this.finishAffair = this.finishAffair.bind(this);
+          this.confirmEdit = this.confirmEdit.bind(this);
+        }
+        toggleDisplay(e) {
+          this.setState({
+            isDisplay: !this.state.isDisplay
+          });
+        }
+        handleChange(e) {
+          const item = this.state.item;
+          item.content = e.target.value;
+          this.setState({
+            item: item
+          });
+        }
+        cancelEdit() {
+          const item = Object.assign({}, this.props.toDoListItem);
+          this.setState({
+            item: item,
+            isEdit: !this.state.isEdit
+          });
+        }
+        handleEdit() {
+          this.setState({
+            isEdit: !this.state.isEdit
+          });
+        }
+        finishAffair(e) {
+          e.stopPropagation();
+          this.props.delete && this.props.delete(this.state.item.id);
+        }
+        confirmEdit(e) {
+          this.props.update && this.props.update(this.state.item);
+          this.handleEdit();
+        }
+        render() {
+          let todoListItem = null;
+          if (this.state.isEdit) {
+            todoListItem = (
+              <li className='list-item'>
+                <input value={this.state.item.content} placeholder='请输入' onChange={this.handleChange} />
+                <span className='operate-area'>
+                  <span onClick={this.confirmEdit}>确定</span>
+                  <span onClick={this.cancelEdit}>取消</span>
+                </span>
+              </li>
+            );
+          } else {
+            todoListItem = (
+              <li className='list-item' onClick={this.toggleDisplay}>
+                {this.props.toDoListItem.content}
+                <span
+                  style={this.state.isDisplay ? { display: 'inline-block' } : { display: 'none' }}
+                  className='operate-area'
+                >
+                  <span onClick={this.handleEdit}>修改</span>
+                  <span onClick={this.finishAffair}>完成</span>
+                </span>
+              </li>
+            );
+          }
+          return todoListItem;
+        }
+      }
+      const app = document.getElementById('app');
+      ReactDOM.render(<ToDoPage />, app);
+    </script>
+  </body>
+</html>
