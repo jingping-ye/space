@@ -1,0 +1,761 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>操作 DOM | React 开发参考手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./使用Fragment.html" />
+    
+    
+    <link rel="prev" href="./ref.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="13"
+        data-chapter-title="操作 DOM"
+        data-filepath="操作DOM.md"
+        data-basepath="."
+        data-revision="Sun Nov 17 2019 19:27:59 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="开发规范.html">
+            
+                
+                    <a href="./开发规范.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        开发规范
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="react生态系统一览.html">
+            
+                
+                    <a href="./react生态系统一览.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        react 生态系统一览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="reactJs知识体系.html">
+            
+                
+                    <a href="./reactJs知识体系.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        reactJs 知识体系
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="安装.html">
+            
+                
+                    <a href="./安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="createClass与class语法.html">
+            
+                
+                    <a href="./createClass与class语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        createClass 与 class 语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="生命周期.html">
+            
+                
+                    <a href="./生命周期.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="jsx语法.html">
+            
+                
+                    <a href="./jsx语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        jsx 语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="界面渲染/index.html">
+            
+                
+                    <a href="./界面渲染/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        界面渲染
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="界面渲染/自定义属性.html">
+            
+                
+                    <a href="./界面渲染/自定义属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        自定义属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="界面渲染/style和class.html">
+            
+                
+                    <a href="./界面渲染/style和class.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        style 和 class
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="界面渲染/条件渲染.html">
+            
+                
+                    <a href="./界面渲染/条件渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        条件渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="界面渲染/列表渲染.html">
+            
+                
+                    <a href="./界面渲染/列表渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        列表渲染
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="事件.html">
+            
+                
+                    <a href="./事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="表单.html">
+            
+                
+                    <a href="./表单.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        表单
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="组件/index.html">
+            
+                
+                    <a href="./组件/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        组件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="组件/state.html">
+            
+                
+                    <a href="./组件/state.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        state
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="组件/prop.html">
+            
+                
+                    <a href="./组件/prop.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                        prop
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="组件/创建组件的方法.html">
+            
+                
+                    <a href="./组件/创建组件的方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.</b>
+                        
+                        创建组件的方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="组件/父子组件通信.html">
+            
+                
+                    <a href="./组件/父子组件通信.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.</b>
+                        
+                        父子组件通信
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="组件/分类/index.html">
+            
+                
+                    <a href="./组件/分类/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.</b>
+                        
+                        分类
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.5.1" data-path="组件/分类/有状态组件与无状态组件.html">
+            
+                
+                    <a href="./组件/分类/有状态组件与无状态组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.1.</b>
+                        
+                        有状态组件与无状态组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5.2" data-path="组件/分类/受控组件与非受控组件.html">
+            
+                
+                    <a href="./组件/分类/受控组件与非受控组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.2.</b>
+                        
+                        受控组件与非受控组件
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="组件/组件的设计.html">
+            
+                
+                    <a href="./组件/组件的设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.</b>
+                        
+                        组件的设计
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="ref.html">
+            
+                
+                    <a href="./ref.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        ref
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="13" data-path="操作DOM.html">
+            
+                
+                    <a href="./操作DOM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        操作 DOM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="使用Fragment.html">
+            
+                
+                    <a href="./使用Fragment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        使用 Fragment
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="性能优化.html">
+            
+                
+                    <a href="./性能优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="es5和es6.html">
+            
+                
+                    <a href="./es5和es6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        es5 和 es6
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="其他/index.html">
+            
+                
+                    <a href="./其他/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        其他
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="17.1" data-path="其他/bootstrap.html">
+            
+                
+                    <a href="./其他/bootstrap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.1.</b>
+                        
+                        bootstrap
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17.2" data-path="其他/IE.html">
+            
+                
+                    <a href="./其他/IE.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.2.</b>
+                        
+                        IE
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17.3" data-path="其他/工具函数.html">
+            
+                
+                    <a href="./其他/工具函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.3.</b>
+                        
+                        工具函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17.4" data-path="其他/code-review.html">
+            
+                
+                    <a href="./其他/code-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.4.</b>
+                        
+                        code-review 表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >React 开发参考手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x64CD;&#x4F5C;dom">&#x64CD;&#x4F5C;DOM</h1>
+<blockquote>
+<p>&#x200B;    &#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x4F1A;&#x9047;&#x5230;&#x9700;&#x8981;&#x64CD;&#x4F5C;&#x771F;&#x5B9E;DOM&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x51E0;&#x79CD;&#x64CD;&#x4F5C;DOM&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+</blockquote>
+<h2 id="1&#x4F7F;&#x7528;refs">1.&#x4F7F;&#x7528;refs</h2>
+<pre><code class="lang-js"> &lt;button ref=&apos;myBtn&apos; onClick={this.handleBtnClick}&gt;
+  &#x6211;&#x662F;&#x8981;div&#x53BB;&#x89E6;&#x53D1;&#x7684;
+&lt;/button&gt;
+&lt;div onClick={this.handleClick}&gt;&#x6211;&#x662F;div&#x5440;&lt;/div&gt;
+---------------------------------------------------
+handleBtnClick: function() {
+    alert(&apos;&#x6211;&#x662F;btn&#x554A;&apos;);
+},
+handleClick: function() {
+    this.refs.myBtn.click();
+},
+</code></pre>
+<h2 id="2&#x4F7F;&#x7528;reactdomfinddomnode">2.&#x4F7F;&#x7528;<code>ReactDOM.findDOMNode</code></h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> ReactDOM = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;react-dom&apos;</span>);
+-------------------------------------------------
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&apos;myBtn&apos;</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleBtnClick}</span>&gt;</span>
+&#x6211;&#x662F;&#x8981;div&#x53BB;&#x89E6;&#x53D1;&#x7684;
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>&#x6211;&#x662F;div&#x5440;<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+--------------------------------------------------
+handleBtnClick: function() {
+    alert(&apos;&#x6211;&#x662F;btn&#x554A;&apos;);
+  },
+handleClick: function(e) {
+    const myBtn = document.querySelector(&apos;#myBtn&apos;);
+    ReactDOM.findDOMNode(myBtn).click();
+}
+</span></code></pre>
+<h2 id="3&#x4F7F;&#x7528;&#x7EAF;js">3.&#x4F7F;&#x7528;&#x7EAF;<code>js</code></h2>
+<pre><code class="lang-js">&lt;button id=&apos;myBtn&apos; onClick={this.handleBtnClick}&gt;
+&#x6211;&#x662F;&#x8981;div&#x53BB;&#x89E6;&#x53D1;&#x7684;
+&lt;/button&gt;
+&lt;div onClick={this.handleClick}&gt;&#x6211;&#x662F;div&#x5440;&lt;/div&gt;
+--------------------------------------------------
+handleBtnClick: function() {
+    alert(&apos;&#x6211;&#x662F;btn&#x554A;&apos;);
+},
+handleClick: function(e) {
+    const myBtn = document.querySelector(&apos;#myBtn&apos;);
+    myBtn.click();
+},
+</code></pre>
+<h2 id="4&#x56DE;&#x8C03;&#x5F15;&#x7528;callback-ref">4.&#x56DE;&#x8C03;&#x5F15;&#x7528;(callback ref)</h2>
+<blockquote>
+<p>es6&#x4E2D;&#x4F7F;&#x7528;&#x66F4;&#x52A0;&#x4FBF;&#x6377;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> _this = <span class="hljs-keyword">this</span>;
+-------------------------------------------
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+  <span class="hljs-attribute">ref</span>=<span class="hljs-value">{function(e)</span> {
+    <span class="hljs-attribute">return</span> (<span class="hljs-attribute">_this.myBtn</span> = <span class="hljs-attribute">e</span>);
+  }}
+  <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleBtnClick}</span>&gt;</span>
+  &#x6211;&#x662F;&#x8981;div&#x53BB;&#x89E6;&#x53D1;&#x7684;
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+----------------------------------------------
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>&#x6211;&#x662F;div&#x5440;<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+----------------------------------------------
+handleBtnClick: function() {
+    alert(&apos;&#x6211;&#x662F;btn&#x554A;&apos;);
+},
+handleClick: function() {
+    this.myBtn.click();
+},
+</span></code></pre>
+<h2 id="5&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;e">5.&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x4EE3;&#x7406;e</h2>
+<pre><code class="lang-js">&lt;div onClick={this.handleClick}&gt;&#x6211;&#x662F;div&#x5440;&lt;/div&gt;
+handleClick: function(e) {
+    const myDiv = e.target;
+    myDiv.style.backgroundColor = &apos;red&apos;;
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./ref.html" class="navigation navigation-prev " aria-label="Previous page: ref"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./使用Fragment.html" class="navigation navigation-next " aria-label="Next page: 使用 Fragment"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
