@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="shortcut icon"
+      href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540636458710&di=4f1ec9b952e4f9f0a3d498a62d29cc89&imgtype=0&src=http%3A%2F%2Fimg.kuqin.com%2Fupimg%2Fallimg%2F160119%2F2114405117-38.jpg"
+      type="image/x-icon"
+    />
+    <title>Light MarkDown</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      #header {
+        height: 50px;
+        background-color: #523eaa;
+        color: #fdf9f9;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+        padding-top: 10px;
+      }
+
+      #markdownPart {
+        width: 49.5%;
+        float: left;
+        border: 1px solid #bbb7b7;
+      }
+
+      #markdownCode {
+        width: 98%;
+        height: 300px;
+        font-size: 18px;
+      }
+
+      #convertPart {
+        width: 49.5%;
+        float: right;
+        border: 1px solid #bbb7b7;
+      }
+
+      #convertContent {
+        width: 98%;
+        min-height: 300px;
+        border: 1px solid #bbb7b7;
+        float: right;
+        padding: 5px;
+      }
+
+      #convertContent ul {
+        padding-left: 20px;
+      }
+
+      .buttonPart {
+        float: right;
+        margin-top: 10px;
+        clear: both;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">Simple markdown</div>
+    <div id="markdownPart">
+      <p>Please enter markdown Code:</p>
+      <textarea id="markdownCode">wait to input...</textarea>
+    </div>
+    <div id="convertPart">
+      <p>Here is Converted content:</p>
+      <div id="convertContent">wait to input...</div>
+    </div>
+    <div class="buttonPart">
+      <button onclick="exportAsPdf()">export as pdf</button> <button onclick="exportAsHtml()">export as html</button>
+    </div>
+    <div id="editor"></div>
+
+    <!-- 引入库 -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/showdown/1.3.0/showdown.min.js"></script>
+    <script src="https://cdn.bootcss.com/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //  markdown转换为文本
+        $('#markdownCode').keyup(function() {
+          var content = $('#markdownCode').val();
+          var converter = new showdown.Converter();
+          var htmlcontent = converter.makeHtml(content);
+          $('#convertContent').html(htmlcontent);
+        });
+      });
+      function createCateglory() {
+        let content = $('#convertContent').html();
+      }
+      //  导出为pdf
+      function exportAsPdf() {
+        // let doc = new jsPDF();
+        // let specialElementHandlers = {
+        //   '#editor': function(element, renderer) {
+        //     return true;
+        //   }
+        // };
+        // doc.fromHTML($('#convertContent').html(), 15, 15, {
+        //   width: 170,
+        //   elementHandlers: specialElementHandlers
+        // });
+        // doc.save('export.pdf');
+        alert('程序开发中....');
+      }
+      //  导出为html
+      function exportAsHtml() {
+        let catelog; // 目录
+        let content; //  内容
+        let htmlContent = [$('#convertContent').html()];
+        let bl = new Blob(htmlContent, {
+          type: 'text/html'
+        });
+        let a = document.createElement('a');
+        a.href = URL.createObjectURL(bl);
+        a.download = 'markdown.html';
+        a.hidden = true;
+        document.body.appendChild(a);
+        a.innerHTML = "something random - nobody will see this, it doesn't matter what you put here";
+        a.click();
+      }
+    </script>
+  </body>
+</html>
