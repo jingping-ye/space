@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>自定义组件 | 微信小程序开发参考</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./分包.html" />
+    
+    
+    <link rel="prev" href="./模板.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="9"
+        data-chapter-title="自定义组件"
+        data-filepath="自定义组件.md"
+        data-basepath="."
+        data-revision="Tue Nov 19 2019 23:10:58 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="项目一般目录结构.html">
+            
+                
+                    <a href="./项目一般目录结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        项目一般目录结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="开发规范.html">
+            
+                
+                    <a href="./开发规范.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        开发规范
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="项目配置和页面配置.html">
+            
+                
+                    <a href="./项目配置和页面配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        配置:项目配置和页面配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="样式.html">
+            
+                
+                    <a href="./样式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        样式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="生命周期.html">
+            
+                
+                    <a href="./生命周期.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> 界面渲染</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="style和class.html">
+            
+                
+                    <a href="./style和class.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        style 和 class
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="条件渲染.html">
+            
+                
+                    <a href="./条件渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        条件渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="列表渲染.html">
+            
+                
+                    <a href="./列表渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        列表渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="wxs过滤器.html">
+            
+                
+                    <a href="./wxs过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        wxs 过滤器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="事件.html">
+            
+                
+                    <a href="./事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="模板.html">
+            
+                
+                    <a href="./模板.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        模板
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="9" data-path="自定义组件.html">
+            
+                
+                    <a href="./自定义组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        自定义组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="分包.html">
+            
+                
+                    <a href="./分包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        分包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="其他.html">
+            
+                
+                    <a href="./其他.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        其他
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >微信小程序开发参考</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;">&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</h1>
+<h2 id="&#x751F;&#x547D;&#x5468;&#x671F;">&#x751F;&#x547D;&#x5468;&#x671F;</h2>
+<ul>
+<li>created: &#x4E0D;&#x80FD;&#x8C03;&#x7528;setData&#x3002;&#x8FD9;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x53EA;&#x5E94;&#x8BE5;&#x7ED9;&#x7EC4;&#x4EF6;this&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x5B57;&#x6BB5;</li>
+<li>attached: data&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x521D;&#x59CB;&#x5316;&#x5728;&#x8FD9;&#x91CC;&#x5B8C;&#x6210;</li>
+<li>detached: &#x7EC4;&#x4EF6;&#x79BB;&#x5F00;</li>
+</ul>
+<h2 id="&#x6570;&#x636E;">&#x6570;&#x636E;</h2>
+<p> &#x6570;&#x636E;&#x662F;&#x7EC4;&#x4EF6;&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#xFF0C;&#x4F46;&#x662F;&#x5728;data&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x6BD4;&#x5982;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#xFF0C;data&#x5C06;&#x8BFB;&#x53D6;&#x4E0D;&#x5230; </p>
+<h3 id="&#x8BBF;&#x95EE;&#x6570;&#x636E;">&#x8BBF;&#x95EE;&#x6570;&#x636E;</h3>
+<pre><code>this.data.dataName
+</code></pre><h2 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h2>
+<blockquote>
+<p>&#x200B;    &#x5C5E;&#x6027;&#x662F;&#x7531;&#x5916;&#x90E8;&#x4F20;&#x5165;</p>
+</blockquote>
+<pre><code class="lang-js">Component({
+    properties:{
+       userName:<span class="hljs-built_in">String</span>,
+       innerText:{
+           type: <span class="hljs-built_in">String</span>,
+           value: <span class="hljs-string">&quot;&#x6587;&#x5B57;&quot;</span>
+       }
+    }
+})
+</code></pre>
+<h3 id="&#x8BBF;&#x95EE;&#x5C5E;&#x6027;">&#x8BBF;&#x95EE;&#x5C5E;&#x6027;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">this</span>.properties.propName
+<span class="hljs-comment">//    OR</span>
+<span class="hljs-keyword">this</span>.data.propName
+</code></pre>
+<h3 id="&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x6821;&#x9A8C;&#x548C;&#x9ED8;&#x8BA4;&#x503C;">&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x6821;&#x9A8C;&#x548C;&#x9ED8;&#x8BA4;&#x503C;</h3>
+<ul>
+<li>&#x4F7F;&#x7528;type&#x53EF;&#x4EE5;&#x6821;&#x9A8C;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x578B;&#x5305;&#x62EC;: String&#x3001;Number&#x3001;Boolean&#x3001;Object&#x3001;Array&#x3001;null(&#x4EFB;&#x610F;&#x7C7B;&#x578B;) &#x3002;</li>
+<li>&#x4F7F;&#x7528;value&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x8FD8;&#x662F;&#x6570;&#x636E;">&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x8FD8;&#x662F;&#x6570;&#x636E;</h3>
+<blockquote>
+<p>&#x4E00;&#x822C;&#x4E0D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x91CC;&#x9762;&#x7684;&#x503C;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5C5E;&#x6027;&#x91CC;&#x9762;&#x7684;&#x503C;&#x4F1A;&#x53D8;&#x52A8;&#x65F6;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x76D1;&#x542C;&#x5C5E;&#x6027;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x5E76;&#x8BBE;&#x7F6E;&#x4E3A;data&#x7684;&#x503C;</p>
+</blockquote>
+<pre><code class="lang-js">//    &#x7ED1;&#x5B9A;&#x5185;&#x90E8;&#x6570;&#x636E;
+&lt;text&gt;{{myNumber}}&lt;/text&gt;
+properties: {
+    //    &#x5BF9;&#x5916;&#x6570;&#x636E;
+    numOrigin:{
+      type:Number,
+      value:10,
+      observer:function(newV,oldV,changedPath){
+        let val = newV&lt;10?`0${newV}`:newV;
+        this.setData({
+          // &#x4FEE;&#x6539;&#x5BF9;&#x5185;&#x6570;&#x636E;
+          myNumber:val
+        })
+      }
+    }
+  },
+  data: {
+    //    &#x5BF9;&#x5185;&#x6570;&#x636E;
+    myNumber:10
+  },
+ //    &#x8C03;&#x7528;&#x7EC4;&#x4EF6;
+  &lt;number-area numOrigin=&quot;{{8}}&quot;/&gt;
+</code></pre>
+<h2 id="&#x6570;&#x636E;&#x548C;&#x5C5E;&#x6027;&#x76D1;&#x542C;">&#x6570;&#x636E;&#x548C;&#x5C5E;&#x6027;&#x76D1;&#x542C;</h2>
+<h3 id="&#x76D1;&#x542C;&#x5C5E;&#x6027;">&#x76D1;&#x542C;&#x5C5E;&#x6027;</h3>
+<pre><code class="lang-js">properties:{
+    userName:{
+        type:<span class="hljs-built_in">String</span>,
+        value:<span class="hljs-string">&quot;&#x9ED8;&#x8BA4;&#x540D;&#x5B57;&quot;</span>,
+        observer:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newV, oldV, changePath</span>)</span>{
+
+        }
+    }
+}
+</code></pre>
+<h3 id="&#x76D1;&#x542C;&#x6570;&#x636E;">&#x76D1;&#x542C;&#x6570;&#x636E;</h3>
+<pre><code class="lang-js"><span class="hljs-comment">//    &#x53C2;&#x6570;&#x4E2D;&#x7684;name&#x5BF9;&#x5E94;user.name</span>
+user.name:funcion(name){
+    name = <span class="hljs-keyword">this</span>.data.user.name;
+}
+<span class="hljs-comment">//    &#x76D1;&#x542C;&#x6240;&#x6709;&#x5B50;&#x6570;&#x636E;&#x7684;&#x53D8;&#x52A8;</span>
+<span class="hljs-string">&apos;user.**&apos;</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">user</span>)</span>{
+    user = <span class="hljs-keyword">this</span>.data.user
+}
+</code></pre>
+<p>&#x53C2;&#x8003;:<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/observer.html" target="_blank">&#x6570;&#x636E;&#x76D1;&#x542C;&#x5668; | &#x5FAE;&#x4FE1;&#x5F00;&#x653E;&#x6587;&#x6863;</a></p>
+<h2 id="&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;">&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;</h2>
+<h3 id="&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;">&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;</h3>
+<p>&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x65F6;&#x5728;&#x7EC4;&#x4EF6;&#x4E0A;&#x4F7F;&#x7528;prop-data-name&#x5373;&#x53EF;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;,&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;properties&#x5373;&#x53EF;&#x63A5;&#x6536;&#x3002;</p>
+<pre><code>//    &#x5728;&#x7236;&#x9875;&#x9762;&#x4E2D;
+&lt;view&gt;
+    &lt;test-component prop-a=&quot;{{dataA}}&quot; prop-b=&quot;{{dataB}}&quot;&gt;&lt;/test-component&gt;
+&lt;/view&gt;
+</code></pre><h3 id="&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;">&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;</h3>
+<p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;<code>triggerEvent(&#x4E8B;&#x4EF6;&#x540D;&#xFF0C;&#x503C;)</code>&#x7684;&#x65B9;&#x5F0F;&#x5373;&#x53EF;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;</p>
+<pre><code> this.triggerEvent(&apos;emitPerson&apos;, { name: &apos;&#x674E;&#x660E;&apos;,age:&apos;123&apos; });
+</code></pre><p>&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;<code>bind:&#x4E8B;&#x4EF6;&#x540D;</code>&#x6216;&#x8005;<code>bind&#x4E8B;&#x4EF6;&#x540D;</code>&#x7684;&#x65B9;&#x5F0F;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF08;&#x540E;&#x8005;&#x66F4;&#x5E38;&#x7528;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;<code>e.detail</code>&#x83B7;&#x53D6;&#x5230;&#x4F20;&#x51FA;&#x7684;&#x503C;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//    &#x65B9;&#x5F0F;&#x4E00;</span>
+&lt;carousel bind:emitPerson=<span class="hljs-string">&quot;getPerson&quot;</span> /&gt;
+getPerson:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(e.detail);
+}
+<span class="hljs-comment">//    &#x65B9;&#x5F0F;&#x4E8C;</span>
+&lt;carousel bind:emitPerson=<span class="hljs-string">&quot;getPerson&quot;</span> /&gt;
+getPerson:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(e.detail);
+}
+</code></pre>
+<h3 id="&#x7236;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;">&#x7236;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;</h3>
+<p>&#x8C03;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x5728;&#x7EC4;&#x4EF6;&#x4E0A;&#x58F0;&#x660E;&#x4E00;&#x4E2A;id&#x5C5E;&#x6027;&#xFF0C;&#x901A;&#x8FC7;<code>selectComponent(&quot;#id&quot;).&#x65B9;&#x6CD5;</code>&#x8C03;&#x7528;</p>
+<pre><code class="lang-js">&lt;carousel content=<span class="hljs-string">&quot;{{mydata}}&quot;</span> bind:emitPerson=<span class="hljs-string">&quot;getPerson&quot;</span> myTitle=<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x6807;&#x9898;&#x6D4B;&#x8BD5;&#x6807;&#x9898;&quot;</span> id=<span class="hljs-string">&quot;banner&quot;</span>/&gt;
+<span class="hljs-keyword">this</span>.selectComponent(<span class="hljs-string">&quot;#banner&quot;</span>).clear();
+</code></pre>
+<h2 id="&#x63D2;&#x69FD;">&#x63D2;&#x69FD;</h2>
+<h3 id="&#x5355;&#x4E2A;&#x63D2;&#x69FD;">&#x5355;&#x4E2A;&#x63D2;&#x69FD;</h3>
+<p>&#x5982;&#x679C;&#x7F16;&#x5199;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x63D2;&#x69FD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x4F7F;&#x7528;<code>slot</code>&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">//    test&#x7EC4;&#x4EF6;</span>
+&lt;view&gt;
+&#x7EC4;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#x53EB;&#x505A;&lt;slot&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">slot</span>&gt;</span>    
+<span class="hljs-tag">&lt;/<span class="hljs-title">view</span>&gt;</span>
+
+//    &#x8C03;&#x7528;test&#x7EC4;&#x4EF6;
+<span class="hljs-tag">&lt;<span class="hljs-title">test-com</span>&gt;</span>&#x6D4B;&#x8BD5;&#x7EC4;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-title">test-com</span>&gt;</span>
+</span></code></pre>
+<h3 id="&#x591A;&#x4E2A;&#x63D2;&#x69FD;">&#x591A;&#x4E2A;&#x63D2;&#x69FD;</h3>
+<p>&#x5982;&#x679C;&#x7F16;&#x5199;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x63D2;&#x69FD;&#xFF0C; &#x5219;&#x9700;&#x8981;&#x5728;&#x7EC4;&#x4EF6;js&#x4E2D;&#x58F0;&#x660E;<code>multipleSlots: true</code> </p>
+<pre><code>Component({
+    options:{
+        multipleSlots: true
+    }
+})
+</code></pre><p>&#x793A;&#x4F8B;slot</p>
+<pre><code>//    &#x5728;&#x7EC4;&#x4EF6;&#x4E2D;test-component
+&lt;view&gt;
+    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+    &lt;view&gt;&#x9875;&#x9762;&#x5185;&#x5BB9;&lt;/view&gt;
+    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;
+&lt;/view&gt;
+//    &#x5F15;&#x7528;&#x7EC4;&#x4EF6;&#x65F6;
+&lt;test-component&gt;
+    &lt;view slot=&quot;header&quot;&gt;&#x9875;&#x5934;&lt;/view&gt;
+    &lt;view slot=&quot;footer&quot;&gt;&#x9875;&#x811A;&lt;/view&gt;
+&lt;/test-component&gt;
+</code></pre><h2 id="&#x6DF7;&#x7528;-behaviors">&#x6DF7;&#x7528; behaviors</h2>
+<blockquote>
+<p>&#x7EC4;&#x4EF6;&#x7684;&#x590D;&#x7528;,&#x5F53;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x6709;&#x76F8;&#x540C;&#x7684;properties&#x3001;data&#x548C;methods&#x751A;&#x81F3;&#x76F8;&#x540C;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;behaviors.</p>
+</blockquote>
+<p>behaviors&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5C0F;&#x7A0B;&#x5E8F;&#x4F1A;&#x81EA;&#x52A8;&#x5408;&#x5E76;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;behaviors&#xFF0C;&#x4E14;&#x5B58;&#x5728;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x6309;&#x7167;&#x524D;&#x540E;&#x987A;&#x5E8F;&#x8986;&#x76D6;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x4EE5;&#x4E0B;:</p>
+<pre><code class="lang-js"><span class="hljs-comment">//    beh.js &#x6DF7;&#x7528;</span>
+<span class="hljs-keyword">const</span> testBeh = Behavior({
+    data:{
+        name&#xFF1A;<span class="hljs-number">1</span>
+    }
+})
+<span class="hljs-keyword">export</span> {testBeh}
+
+<span class="hljs-comment">//    &#x8C03;&#x7528;</span>
+<span class="hljs-keyword">import</span> {testBeh} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./testBeh&apos;</span>;
+Component({
+    behaviors:[testBeh]
+})
+</code></pre>
+<h2 id="&#x6837;&#x5F0F;">&#x6837;&#x5F0F;</h2>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x4E2D;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;class&#xFF0C;&#x4E0D;&#x4F7F;&#x7528;id&#x9009;&#x62E9;&#x5668;&#x3001;&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#x548C;&#x6807;&#x7B7E;&#x540D;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x4E0D;&#x4F7F;&#x7528;&#x540E;&#x4EE3;&#x9009;&#x62E9;&#x5668;&#x548C;&#x5B50;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x6837;&#x5F0F;&#x4F1A;&#x4ECE;&#x7EC4;&#x4EF6;&#x5916;&#x7EE7;&#x627F;&#x5230;&#x7EC4;&#x4EF6;&#x5185;</li>
+<li>&#x8981;&#x4F7F;&#x7EC4;&#x4EF6;&#x5916;&#x7684;&#x6837;&#x5F0F;&#x4E0D;&#x5F71;&#x54CD;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728;js&#x6587;&#x4EF6;&#x7684;options&#x5C5E;&#x6027;&#x58F0;&#x660E;<code>stylesolation:&apos;isolated&apos;</code></li>
+</ul>
+<h3 id="&#x4F20;&#x5165;&#x5916;&#x90E8;&#x6837;&#x5F0F;">&#x4F20;&#x5165;&#x5916;&#x90E8;&#x6837;&#x5F0F;</h3>
+<pre><code>//    &#x7EC4;&#x4EF6;&#x5F15;&#x5165;&#x9875;
+&lt;test-component my-class=&quot;test-class&quot;&gt;&lt;/test-component&gt;
+Component({
+    externalClasses:[&apos;my-class&apos;]
+})
+
+//    wxss&#x6837;&#x5F0F;
+.test-class{
+    color: red;
+}
+</code></pre><h2 id="&#x7EC4;&#x4EF6;&#x5173;&#x7CFB;-relations">&#x7EC4;&#x4EF6;&#x5173;&#x7CFB; relations</h2>
+<pre><code class="lang-js">relations: {
+    <span class="hljs-comment">//    &#x8BE5;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7EC4;&#x4EF6;&#x4E3A;cell-group</span>
+    <span class="hljs-string">&apos;../cell-group/index&apos;</span>: {
+        type: <span class="hljs-string">&apos;parent&apos;</span> 
+    }
+},
+relations: {
+    <span class="hljs-comment">//    &#x8BE5;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x4E3A;cell</span>
+    <span class="hljs-string">&apos;../cell/index&apos;</span>: {
+        type: <span class="hljs-string">&apos;child&apos;</span>,
+        linked () {
+            <span class="hljs-keyword">this</span>._updateIsLastCell();
+        },
+        linkChanged () {
+            <span class="hljs-keyword">this</span>._updateIsLastCell();
+        },
+        unlinked () {
+            <span class="hljs-keyword">this</span>._updateIsLastCell();
+        }
+    }
+},
+</code></pre>
+<h2 id="&#x7EC4;&#x4EF6;&#x65B9;&#x6CD5;">&#x7EC4;&#x4EF6;&#x65B9;&#x6CD5;</h2>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./模板.html" class="navigation navigation-prev " aria-label="Previous page: 模板"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./分包.html" class="navigation navigation-next " aria-label="Next page: 分包"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

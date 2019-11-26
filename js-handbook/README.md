@@ -1,0 +1,33 @@
+## 千分符
+```js
+function format(num) {
+  let arr = [];
+  let str = '' + num;
+  let intPart = '';
+  let digitPart = '';
+  let count = '';
+  if (str.indexOf('.') !== -1) {
+    intPart = str.split('.')[0];
+    digitPart = str.split('.')[1];
+  } else {
+    intPart = str;
+  }
+
+  count = intPart.length;
+
+  while (count >= 3) {
+    arr.unshift(intPart.slice(count - 3, count));
+    count -= 3;
+  }
+
+  // 如果是不是3的倍数就另外追加到上去
+  intPart.length % 3 && arr.unshift(intPart.slice(0, intPart.length % 3));
+
+  if (digitPart.length > 0) {
+    return `${arr.toString()}.${digitPart}`;
+  } else {
+    return arr.toString();
+  }
+}
+console.log(format(12345678.12));
+```

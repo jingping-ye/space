@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>条件渲染 | 微信小程序开发参考</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./列表渲染.html" />
+    
+    
+    <link rel="prev" href="./style和class.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="6.2"
+        data-chapter-title="条件渲染"
+        data-filepath="条件渲染.md"
+        data-basepath="."
+        data-revision="Tue Nov 19 2019 23:10:58 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="项目一般目录结构.html">
+            
+                
+                    <a href="./项目一般目录结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        项目一般目录结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="开发规范.html">
+            
+                
+                    <a href="./开发规范.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        开发规范
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="项目配置和页面配置.html">
+            
+                
+                    <a href="./项目配置和页面配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        配置:项目配置和页面配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="样式.html">
+            
+                
+                    <a href="./样式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        样式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="生命周期.html">
+            
+                
+                    <a href="./生命周期.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> 界面渲染</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="style和class.html">
+            
+                
+                    <a href="./style和class.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        style 和 class
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="条件渲染.html">
+            
+                
+                    <a href="./条件渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        条件渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="列表渲染.html">
+            
+                
+                    <a href="./列表渲染.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        列表渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="wxs过滤器.html">
+            
+                
+                    <a href="./wxs过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        wxs 过滤器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="事件.html">
+            
+                
+                    <a href="./事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="模板.html">
+            
+                
+                    <a href="./模板.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        模板
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="自定义组件.html">
+            
+                
+                    <a href="./自定义组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        自定义组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="分包.html">
+            
+                
+                    <a href="./分包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        分包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="其他.html">
+            
+                
+                    <a href="./其他.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        其他
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >微信小程序开发参考</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6761;&#x4EF6;&#x6E32;&#x67D3;">&#x6761;&#x4EF6;&#x6E32;&#x67D3;</h1>
+<h2 id="wxif&#x3001;wxelif&#x548C;wxelse">wx:if&#x3001;wx:elif&#x548C;wx:else</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">view</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;i-as-btn-loading&quot;</span> <span class="hljs-attribute">wx:if</span>=<span class="hljs-value">&quot;{{ flag==&quot;</span><span class="hljs-value">1&quot;</span> }}&quot;&gt;</span>&#x6E32;&#x67D3;&#x4E00;<span class="hljs-tag">&lt;/<span class="hljs-title">view</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">view</span> <span class="hljs-attribute">wx:elif</span>=<span class="hljs-value">&quot;{{flag=&quot;</span><span class="hljs-value">2&quot;}}&quot;</span>&gt;</span>&#x6E32;&#x67D3;&#x4E8C;<span class="hljs-tag">&lt;/<span class="hljs-title">view</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">view</span> <span class="hljs-attribute">wx:else</span>&gt;</span>&#x6E32;&#x67D3;&#x4E09;<span class="hljs-tag">&lt;/<span class="hljs-title">view</span>&gt;</span>
+</code></pre>
+<p>&#x5728;&#x6761;&#x4EF6;&#x6E32;&#x67D3;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x7ECF;&#x5E38;&#x5C06;<code>block</code>&#x4E0E;<code>wx:if</code>&#x642D;&#x914D;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 id="hidden">hidden</h2>
+<blockquote>
+<p>hidden&#x4E3A;true&#x7684;&#x65F6;&#x5019;&#x663E;&#x793A;&#xFF0C;&#x4E3A;false&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x663E;&#x793A;</p>
+</blockquote>
+<h2 id="wxif&#x4E0E;hidden&#x4E0D;&#x540C;">wx:if&#x4E0E;hidden&#x4E0D;&#x540C;</h2>
+<p>wx:if&#x6BD4;hidden&#x4F1A;&#x66F4;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#xFF0C;&#x56E0;&#x4E3A;&#x5F53; wx:if &#x7684;&#x6761;&#x4EF6;&#x503C;&#x5207;&#x6362;&#x65F6;&#xFF0C;&#x6846;&#x67B6;&#x6709;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x6E32;&#x67D3;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B83;&#x4F1A;&#x786E;&#x4FDD;&#x6761;&#x4EF6;&#x5757;&#x5728;&#x5207;&#x6362;&#x65F6;&#x9500;&#x6BC1;&#x6216;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x9891;&#x7E41;&#x7684;&#x5207;&#x6362;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528;hidden,&#x5982;&#x679C;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F7F;&#x7528;<code>wx:if</code>&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./style和class.html" class="navigation navigation-prev " aria-label="Previous page: style 和 class"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./列表渲染.html" class="navigation navigation-next " aria-label="Next page: 列表渲染"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
