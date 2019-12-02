@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>上传图片</title>
+    <style>
+      .page-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 700px;
+      }
+      .note-container {
+        margin-left: 20px;
+      }
+      .note-container ul li {
+        line-height: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script type="text/babel">
+      const getUid = function() {
+        const S4 = function() {
+          return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        };
+        return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
+      };
+
+      const toFileSize = function(size) {
+        let B = function() {
+          return size + 'B';
+        };
+        let KB = function() {
+          return (size / 1024).toFixed(2) + 'KB';
+        };
+        let MB = function() {
+          return (size / (1024 * 1024)).toFixed(2) + 'MB';
+        };
+        let GB = function() {
+          return (size / (1024 * 1024 * 1024)).toFixed(2) + 'GB';
+        };
+        return size < 1024 ? B() : size < 1024 * 1024 ? KB() : size < 1024 * 1024 * 1024 ? MB() : GB();
+      };
+
+      const uploadFileStyle = {
+        fileInput: {
+          display: 'none'
+        },
+        uploadTip: {
+          marginTop: 7,
+          fontSize: 12,
+          color: '#606266'
+        },
+        uploadBox: {
+          width: 300,
+          height: 300,
+          border: '2px dashed #dedede',
+          borderRadius: '4px',
+          position: 'relative'
+        }
+      };
+
+      class UploadImg extends React.Component {
+        constructor(props) {
+          super(props);
+          this.uploadRefId = getUid();
+          this.state = {
+            fileInfo: {},
+            isHover: false
+          };
+          this.uploadFile = this.uploadFile.bind(this);
+          this.handleEnter = this.handleEnter.bind(this);
+          this.handleOut = this.handleOut.bind(this);
+          this.selectFile = this.selectFile.bind(this);
+          this.clearFile = this.clearFile.bind(this);
+          this.deletePic = this.deletePic.bind(this);
+        }
+
+        render() {
+          return (
+            <div style={{ width: 300, textAlign: 'center' }}>
+              <input
+                type='file'
+                onChange={e => this.uploadFile(e)}
+                ref={this.uploadRefId}
+                style={uploadFileStyle.fileInput}
+              />
+              {/*上传盒子*/}
+              <div style={uploadFileStyle.uploadBox} onMouseLeave={this.handleOut}>
+                <div
+                  style={{
+                    opacity: 0.8,
+                    cursor: 'pointer',
+                    display: this.state.fileInfo.url ? 'none' : 'block',
+                    position: 'absolute',
+                    top: '50%',
+                    right: '50%',
+                    transform: 'translate(50%, -50%)',
+                    whiteSpace: 'nowrap'
+                  }}
+                  onClick={this.selectFile}
+                >
+                  <svg
+                    style={{ fontSize: '36px' }}
+                    viewBox='64 64 896 896'
+                    focusable='false'
+                    className=''
+                    data-icon='plus'
+                    width='1em'
+                    height='1em'
+                    fill='currentColor'
+                    aria-hidden='true'
+                  >
+                    <path d='M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z'></path>
+                    <path d='M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z'></path>
+                  </svg>
+                  <div>{this.props.uploadInnerTip}</div>
+                </div>
+                <div onMouseEnter={this.handleEnter} style={{ display: this.state.fileInfo.name ? 'block' : 'none' }}>
+                  <img
+                    onClick={this.selectFile}
+                    src={this.state.fileInfo.url}
+                    alt={this.state.fileInfo.name}
+                    style={{
+                      minWidth: '1%',
+                      minHeight: '1%',
+                      maxWidth: '100%',
+                      maxHeight: '294px',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      margin: 'auto',
+                      opacity: this.state.isHover ? 0.8 : 1,
+                      cursor: 'pointer',
+                      display: this.state.fileInfo.url ? 'block' : 'none'
+                    }}
+                  />
+                  <div
+                    onClick={this.selectFile}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      margin: 'auto',
+                      cursor: 'pointer',
+                      backgroundColor: '#fff',
+                      display: this.state.fileInfo.url ? 'none' : 'block'
+                    }}
+                  >
+                    <p style={{ marginTop: 130 }}>文件名称:{this.state.fileInfo.name}</p>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    width: 300,
+                    height: 300,
+                    zIndex: 10,
+                    backgroundColor: '#666',
+                    opacity: 0.8,
+                    display: this.state.isHover && this.state.fileInfo.name ? 'block' : 'none'
+                  }}
+                >
+                  <div
+                    onClick={this.deletePic}
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      right: '50%',
+                      transform: 'translate(50%, -50%)',
+                      color: '#fff',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <svg
+                      className='icon'
+                      style={{
+                        fontSize: '30px',
+                        width: '1em',
+                        height: '1em',
+                        verticalAlign: 'middle',
+                        fill: 'currentColor',
+                        overflow: 'hidden'
+                      }}
+                      viewBox='0 0 1024 1024'
+                      version='1.1'
+                      xmlns='http://www.w3.org/2000/svg'
+                      p-id='1830'
+                    >
+                      <path
+                        d='M677.647059 256l0-90.352941c0-37.436235-23.461647-60.235294-61.771294-60.235294L408.094118 105.411765c-38.249412 0-61.741176 22.799059-61.741176 60.235294l0 90.352941-180.705882 0 0 60.235294 60.235294 0 0 512c0 54.272 33.972706 90.352941 90.352941 90.352941l391.529412 0c55.085176 0 90.352941-33.490824 90.352941-90.352941l0-512 60.235294 0 0-60.235294L677.647059 256zM406.588235 165.647059l210.823529 0-1.264941 90.352941L406.588235 256 406.588235 165.647059zM737.882353 858.352941l-451.764706 0 0-542.117647 451.764706 0L737.882353 858.352941zM466.823529 376.470588l-58.729412 0-1.505882 391.529412 60.235294 0L466.823529 376.470588zM617.411765 376.470588l-60.235294 0 0 391.529412 60.235294 0L617.411765 376.470588z'
+                        p-id='1831'
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <button type='button' style={{ display: 'none' }} onClick={this.selectFile}></button>
+              {this.displayTip()}
+            </div>
+          );
+        }
+
+        displayTip() {
+          if (this.props.tip && this.props.tip.length > 0) {
+            return <div style={uploadFileStyle.uploadTip}>{this.props.tip}</div>;
+          } else {
+            return;
+          }
+        }
+
+        //  选择文件
+        selectFile() {
+          const uploadRefId = this.uploadRefId;
+          this.refs[uploadRefId].click();
+        }
+
+        //  上传文件
+        uploadFile(e) {
+          let file = e.target.files[0];
+          if (file) {
+            let fileInfo = {
+              name: file.name,
+              raw: file,
+              size: file.size
+            };
+
+            fileInfo.uid = getUid();
+            if (file.type.indexOf('image') !== -1) {
+              fileInfo.type = file.type;
+              let URLCreator = window.URL || window.webkitURL;
+              let url = URLCreator.createObjectURL(file);
+              fileInfo.url = url;
+            } else {
+              fileInfo.type = file.name.split('.')[1];
+            }
+
+            if (!this.props.beforeUpload(fileInfo)) {
+              this.clearFile();
+              return false;
+            }
+
+            this.setState({
+              fileInfo: fileInfo
+            });
+            this.props.onFileChange && this.props.onFileChange(fileInfo);
+            this.clearFile();
+          }
+        }
+
+        handleEnter() {
+          this.setState({
+            isHover: true
+          });
+        }
+
+        handleOut() {
+          this.setState({
+            isHover: false
+          });
+        }
+
+        deletePic() {
+          this.refs[this.uploadRefId].value = '';
+          this.setState({
+            fileInfo: {},
+            isHover: false
+          });
+          this.props.onFileChange && this.props.onFileChange(this.state.fileInfo);
+        }
+
+        clearFile() {
+          const uploadRefId = this.uploadRefId;
+          this.refs[uploadRefId].value = '';
+        }
+
+        componentDidMount() {
+          if (this.props.initialFile && Object.keys(this.props.initialFile).length > 0) {
+            this.setState({
+              fileInfo: this.props.initialFile
+            });
+          }
+        }
+
+        componentWillReceiveProps(nextProps) {
+          console.log('nextProps', JSON.stringify(nextProps));
+          if (nextProps.initialFile && Object.keys(nextProps.initialFile).length > 0) {
+            this.setState({
+              fileInfo: nextProps.initialFile
+            });
+          }
+        }
+
+        componentWillUnmount() {
+          this.clearFile();
+        }
+      }
+
+      UploadImg.defaultProps = {
+        tip: '',
+        uploadInnerTip: '请上传图片',
+        beforeUpload: function() {
+          return true;
+        },
+        onFileChange: function() {},
+        initialFile: {}
+      };
+
+      UploadImg.propTypes = {
+        beforeUpload: PropTypes.function,
+        onFileChange: PropTypes.function,
+        tip: PropTypes.string,
+        uploadInnerTip: PropTypes.string,
+        initialFile: PropTypes.object
+      };
+
+      class Page extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            initialPic: {
+              url: 'http://wx4.sinaimg.cn/orj360/baa555cdly1fut34h684cj205f05iq3g.jpg',
+              name: '是个狠人'
+            },
+            uploadPic: {}
+          };
+          this.handleFileChange = this.handleFileChange.bind(this);
+          this.beforeUpload = this.beforeUpload.bind(this);
+        }
+
+        render() {
+          return (
+            <div className='page-container'>
+              <div>
+                <div>
+                  <UploadImg
+                    initialFile={this.state.initialPic}
+                    onFileChange={this.handleFileChange}
+                    beforeUpload={this.beforeUpload}
+                    uploadInnerTip='点击上传图片'
+                    tip='只能上传图片，图片大小不能超过200KB'
+                  />
+                </div>
+              </div>
+              <div className='note-container'>
+                <ul>
+                  <li>图片名称：{this.state.uploadPic.name ? this.state.uploadPic.name : '不知道呀'}</li>
+                  <li>图片大小:{this.state.uploadPic.size ? toFileSize(this.state.uploadPic.size) : '不知道呀'}</li>
+                  <li>图片uid:{this.state.uploadPic.uid ? this.state.uploadPic.uid : '不知道呀'}</li>
+                  <li>图片当前url:{this.state.uploadPic.url ? this.state.uploadPic.url : '不知道呀'}</li>
+                </ul>
+                <p>参数说明</p>
+                <ul>
+                  <li>tip:图片上传框下方提示文字,默认为string类型</li>
+                  <li>uploadInnerTip:图片上传框上传图标下方文字，默认为string类型</li>
+                  <li>beforeUpload:图片上传前函数，可用于校验，默认为function类型</li>
+                  <li>onFileChange:文件改变函数，删除、上传文件均会触发此函数</li>
+                  <li>initialFile:默认文件</li>
+                </ul>
+              </div>
+            </div>
+          );
+        }
+
+        handleFileChange(val) {
+          console.log(val);
+          this.setState({
+            uploadPic: val
+          });
+        }
+
+        beforeUpload(file) {
+          const isImage = file.type.indexOf('image') !== -1;
+          if (!isImage) {
+            alert(`文件“${file.name}”上传失败:当前上传的是非图片`);
+            return false;
+          }
+
+          const isLt200KB = file.size / 1024 < 200;
+          if (!isLt200KB) {
+            alert(`文件“${file.name}”上传失败:上传文件必须小于200KB`);
+            return false;
+          }
+
+          return true;
+        }
+      }
+
+      const app = document.getElementById('app');
+      ReactDOM.render(<Page />, app);
+    </script>
+  </body>
+</html>
