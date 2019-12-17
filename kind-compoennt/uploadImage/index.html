@@ -298,11 +298,12 @@
         }
 
         componentWillReceiveProps(nextProps) {
-          console.log('nextProps', JSON.stringify(nextProps));
-          if (nextProps.initialFile && Object.keys(nextProps.initialFile).length > 0) {
-            this.setState({
-              fileInfo: nextProps.initialFile
-            });
+          if (JSON.stringify(nextProps.initialFile) != JSON.stringify(this.props.initialFile)) {
+            if (nextProps.initialFile && Object.keys(nextProps.initialFile).length > 0) {
+              this.setState({
+                fileInfo: nextProps.initialFile
+              });
+            }
           }
         }
 
