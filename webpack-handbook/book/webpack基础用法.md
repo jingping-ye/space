@@ -97,7 +97,7 @@ modules:{
 
 ### 用法
 
-> 挡在plugins数组里就可以了
+> 通过require引入plugin,并且放置在plugins数组里就可以了
 
 ```js
 plugins:[
@@ -398,9 +398,81 @@ PS:hash有32位 [chunkhash:8]默认取前8位
 | [hash]        | 文件内容hash，默认md5生成    |
 | [emoj]        | 一个睡觉的代指文件内容的emoj |
 
-
-
 ## html、css、js代码压缩
+
+### js文件压缩
+
+webpack4内置了uglifyjs-webpack-plugin插件，打包出来的文件默认是压缩的
+
+### css文件压缩
+
+- optimize-css-assets-webpacl-plugin，依赖于css预处理器 cssnano
+
+```js
+module.exports = {
+    entry:{
+        app:'./src/app.js',
+        search:'./src/search.js'
+    },
+    output:{
+        filename:'[name][chunkhash:8]',
+        path:__dirname + '/dist'
+    },
+    plugins:[
+        new OptimizeCSSAssetsPlugin({
+            assetsNameRegExp:/\.css$/g,
+            cssProcessor:require('cssnano')
+        })
+    ]
+}
+```
+
+
+
+### html压缩
+
+- html-webpack-plugin,设置压缩参数, 换行符、空格和注释都可以去掉
+
+```js
+module.exports = {
+    entry:{
+        app:'./src/app.js',
+        search:'./src/search.js'
+    },
+    output:{
+        filename:'[name][chunkhash:8]',
+        path:__dirname + '/dist'
+    },
+    plugins:[
+        new HtmlWebpackplugin({
+            template:path.join(__dirname, 'src/search.html'),
+            filename:'search.html',
+            chunk:['search'],
+            inject:true,
+            minify:{
+                html5:true,
+                collapseWhitespace:true,
+                preserveLineBreaks:false,
+                minifyCSS:true,
+                minifyJS:true,
+                removeComments:false
+            }
+        })
+    ]
+}
+```
+
+准确的说这个增量更新还是全量更新并不是 webpack 去做的，而是部署脚本或者部署服务器去关注的，webpack 只负责构建。
+
+通常的做法是： webpack 打包的时候会给每个文件生成文件指纹(这个通常可以理解成静态资源的版本)。然后部署脚本进行部署操作，比如: scp、rsync 等操作把资源发布到 生产机器或者 cdn 的时候。发布上去后，部署系统会将当前的静态资源的列表存起来，下次再次进行部署会将新的资源列表和前一次的资源列表进行比对。如果文件指纹没有变化，则不会进行覆盖操作，从而达到增量部署。  
+
+HtmlWebpackPlugin 里面的minify 的 minifyCSS 参数和minifyJS参数是用于去压缩一开始就内联在 html 里面的css和js，不是打包生成的 css 和 js。
+
+bundle：打包最终生成的文件
+chunk：每个chunk是由多个module组成，可以通过代码分割成多个chunk。
+module：webpack中的模块（js、css、图片等等）
+
+code 是 VSCode 里面的一个命令，用于快速启动 vscode 编辑器，并且打开当前项目
 
 ## 实验
 
